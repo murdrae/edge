@@ -59,8 +59,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    // Kotlin JVM target is configured with the non-deprecated compilerOptions DSL.
+    // AGP 9's built-in Kotlin integration uses the same JVM target as Java.
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
     }
 
     defaultConfig {
