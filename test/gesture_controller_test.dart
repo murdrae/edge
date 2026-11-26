@@ -56,4 +56,24 @@ void main() {
     controller.onEvent(14, now.millisecondsSinceEpoch ~/ 1000, 'third');
     expect(waterCalls, 1);
   });
+  test('meditation action dispatches once per physical double-tap', () {
+    final settings = GestureSettings()..doubleTap = DeviceAction.meditationTimer;
+    var toggles = 0;
+    final controller = GestureController(
+      settings: settings,
+      log: (_) {},
+      onMarkMoment: () async {},
+      onWorkoutToggle: () async {},
+      onLogWater: () async {},
+      onMeditationTimer: () async { toggles++; },
+    );
+    controller.onEvent(14, now.millisecondsSinceEpoch ~/ 1000, 'start');
+    expect(toggles, 1);
+    controller.onEvent(14, now.millisecondsSinceEpoch ~/ 1000, 'duplicate');
+    expect(toggles, 1);
+    now = now.add(const Duration(seconds: 3));
+    controller.onEvent(14, now.millisecondsSinceEpoch ~/ 1000, 'cancel');
+    expect(toggles, 2);
+  });
+
 }
