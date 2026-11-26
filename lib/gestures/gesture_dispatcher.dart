@@ -24,6 +24,7 @@ class GestureDispatcher {
   final Future<void> Function()? onMarkMoment;
   final Future<void> Function()? onWorkoutToggle;
   final Future<void> Function()? onLogWater;
+  final Future<void> Function()? onMeditationTimer;
 
   GestureDispatcher({
     required this.settings,
@@ -31,6 +32,7 @@ class GestureDispatcher {
     this.onMarkMoment,
     this.onWorkoutToggle,
     this.onLogWater,
+    this.onMeditationTimer,
   });
 
   static const int _doubleTapEventId = 14; // EventId.doubleTap
@@ -73,6 +75,9 @@ class GestureDispatcher {
           break;
         case DeviceAction.workoutToggle:
           onWorkoutToggle?.call();
+          break;
+        case DeviceAction.meditationTimer:
+          onMeditationTimer?.call();
           break;
         case DeviceAction.logWater:
           onLogWater?.call();
