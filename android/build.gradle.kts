@@ -9,6 +9,23 @@ allprojects {
     // androidx.work.*Kt classes (CheckDuplicates failure) and breaks the plugin's
     // Kotlin compile. work-runtime-ktx:2.8.1 is a stub (ktx merged into runtime at
     // 2.8), so forcing both to 2.8.1 deduplicates cleanly.
+
+    // Some older Flutter plugins compile Java for 11 but Kotlin for 1.8.
+    // Keep Kotlin targets aligned with each Android plugin's Java target.
+    plugins.withId("org.jetbrains.kotlin.android") {
+        afterEvaluate {
+            val javaTarget = extensions.findByType(
+                com.android.build.gradle.BaseExtension::class.java
+            )?.compileOptions?.targetCompatibility?.toString() ?: "11"
+            tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java)
+                .configureEach {
+                    compilerOptions.jvmTarget.set(
+                        org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(javaTarget)
+                    )
+                }
+        }
+    }
+
     configurations.all {
         resolutionStrategy {
             force("androidx.work:work-runtime:2.8.1")
