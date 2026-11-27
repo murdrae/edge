@@ -1,7 +1,7 @@
 // A parent rebuild with an equal (but new) items list must not snap the
 // chip row back to the selected tab while the user is reading the rest.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 

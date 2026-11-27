@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 import 'package:openstrap_edge/ui2/guides/guide_routes.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart';
@@ -54,7 +55,7 @@ class R2Fixture { final navKey = GlobalKey<NavigatorState>(); final routes = Gui
     await t.pumpWidget(GuideDimScope(controller: dim, child: RepaintBoundary(key: r2Capture, child: MaterialApp(
       scrollBehavior: const GuideScrollBehavior(), navigatorKey: navKey, navigatorObservers: [routes], theme: buildTheme(brightness),
       builder: (context, child) => MediaQuery(data: MediaQuery.of(context).copyWith(
-        textScaler: TextScaler.linear(textScale)), child: child!), localizationsDelegates: AppLocalizations.localizationsDelegates,
+        textScaler: TextScaler.linear(textScale)), child: child!), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales, locale: locale, home: home)))); await t.pump(); await start(t);
     addTearDown(() { if (entry?.mounted ?? false) entry!.remove(); run.dispose(); targetTop.dispose(); dim.dispose(); }); }
   Future<void> start(WidgetTester t) async { run = GuideRun(guide: guide, variant: guide.variants.single);

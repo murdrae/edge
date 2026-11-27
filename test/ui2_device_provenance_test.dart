@@ -5,10 +5,11 @@
 // `HealthSource` lists, the same idiom `device_sources_test.dart` already
 // uses, rather than constructing a live `AppState`.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ble/adapters/signals.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/data/db.dart' show LocalDb;
 import 'package:openstrap_edge/ui2/profile/devices.dart';
 import 'package:openstrap_edge/ui2/screens/metric_detail.dart';
@@ -71,7 +72,7 @@ void contextTest(String name, void Function(BuildContext c) body) =>
     testWidgets(name, (t) async {
       late BuildContext ctx;
       await t.pumpWidget(MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: Builder(builder: (c) {
           ctx = c;

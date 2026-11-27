@@ -1,7 +1,7 @@
 // Adding a custom journal field used to reload the whole form from storage,
 // so a note typed (or tags ticked) before the tap was silently discarded.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

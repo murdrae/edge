@@ -28,13 +28,12 @@
 
 // iOS/macOS page transitions are NOT named here on purpose.
 //
-// CupertinoPageTransitionsBuilder has MOVED between SDK versions: on 3.41.6
-// (the pinned toolchain, see .github/workflows/test.yml) material.dart exports
-// it and cupertino.dart does not; on 3.44.x it is the other way round. So there
-// is no single import that compiles on both — importing from cupertino breaks
-// the pin with "doesn't export a member with the shown name", and importing
-// from material breaks newer SDKs with "isn't defined", which also takes the
-// surrounding const map down with it.
+// CupertinoPageTransitionsBuilder has MOVED more than once: on 3.41.6
+// material.dart exported it and cupertino.dart did not; on 3.44.x it was the
+// other way round; since 3.47 both libraries are deprecated and it lives in the
+// cupertino_ui package, which material_ui (what this file imports) does not
+// re-export. Naming it ties this file to one package's current layout, and a
+// wrong import also takes the surrounding const map down with it.
 //
 // Spreading PageTransitionsTheme's own defaults sidesteps the question: the SDK
 // already maps iOS/macOS to whatever Cupertino builder that version ships, so
@@ -44,7 +43,7 @@
 // Do not "simplify" this back to an explicit iOS entry. The Cupertino builder
 // is what supplies the interactive edge-swipe-back gesture — see
 // page_transitions.dart's navigation contract.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'page_transitions.dart';
 import 'tokens.dart';
 

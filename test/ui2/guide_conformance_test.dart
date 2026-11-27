@@ -12,7 +12,7 @@
 //    guide or step without a scene fails here).  * CLAIM(guide-copy): every guide string exists in every locale, differs from
 //    English where English is not a brand, and has balanced bold markup.
 import 'package:openstrap_edge/sync/paired_device.dart';
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/state/alarm_schedule.dart';
 import 'package:openstrap_edge/ui2/activity/catalogue.dart' show quickStart; import 'package:openstrap_edge/ui2/activity/day_strain.dart' show DayStrainDetail;
 import 'package:openstrap_edge/ui2/activity/live.dart' show liveFor; import 'package:openstrap_edge/ui2/activity/picker.dart' show ActivityPicker;

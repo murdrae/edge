@@ -5,7 +5,7 @@
 // deleted the only screen that asked, so Doze or an OEM task killer could stop
 // the tracking service overnight and nothing in the app offered the fix.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/profile/profile.dart' show SetRow;
 import 'package:openstrap_edge/ui2/profile/settings.dart';

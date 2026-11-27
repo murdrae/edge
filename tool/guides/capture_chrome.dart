@@ -7,7 +7,7 @@
 //   1b  alarm-schedule step 3 (Alarm page): the label sits against the Wake time outline   3   off path on Health (route back = Today): every content card dims
 //   5   the step card, "Don't see it?" open, and the off-path card: Exit bottom right, accent
 //   7   remove-detected completes after a real Discard.
-import 'dart:io'; import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:io'; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/models/activity_suggestion.dart';
 import 'package:openstrap_edge/state/alarm_schedule.dart'; import 'package:openstrap_edge/ui2/app_shell.dart' show ShellDomain;
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_catalogue.dart';

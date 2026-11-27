@@ -6,7 +6,7 @@
 // DIAGNOSIS (edge.research/guides/r2-green-report.md, "Round 5 diagnosis and red"):  * 1a: the target is measured against the SCREEN, not the visible area (r4 review C4).
 //  * 1b: _boundsOf takes ANY wide SubTabs whose top is below mid-screen for the bottom tab bar, so
 //    on Alarm the day row shrinks the card bounds to end above itself, and the pill (clamped    into the bounds) lands at the bottom of them, far from the Wake time outline.
-import '../support/live_guide_focus.dart'; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart';
+import '../support/live_guide_focus.dart'; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart'; import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';

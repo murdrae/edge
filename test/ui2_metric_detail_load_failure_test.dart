@@ -8,7 +8,7 @@
 // The failure card must NOT reuse the empty state's copy: telling someone with
 // data on disk to wear the band is the false-absence bug AGENTS §4.1 names.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/state/app_state.dart';

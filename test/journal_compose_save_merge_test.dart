@@ -3,7 +3,7 @@
 // water or a moment tag logged from the strap while the screen was open was
 // put back to the old value on Save.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

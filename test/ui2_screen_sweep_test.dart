@@ -13,13 +13,14 @@
 
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 
 import 'package:openstrap_edge/ai/nightly_sweep.dart' show SweepFinding;
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/state/app_state.dart';
 import 'package:openstrap_edge/ui2/activity/day_strain.dart';
@@ -302,7 +303,7 @@ void main() {
               child: MaterialApp(
                 locale: Locale(locale),
                 localizationsDelegates:
-                    AppLocalizations.localizationsDelegates,
+                    appLocalizationsDelegates,
                 supportedLocales: AppLocalizations.supportedLocales,
                 theme: buildTheme(Brightness.light),
                 builder: (c, child) => MediaQuery(

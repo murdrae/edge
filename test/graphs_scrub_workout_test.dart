@@ -10,7 +10,7 @@
 // change but needs strength-set rows from the real database (LocalDb), which a
 // widget test cannot seed without sqflite; it is covered at green by the same
 // helper and listed as untested-by-fixture in phase5.report.md.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/state/app_state.dart';

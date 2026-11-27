@@ -2,7 +2,7 @@
 // "Workouts only"), and THE table the pairing sheets show, with the column it
 // is not in faded. The note says which switch it waits for; the switch itself
 // sits right under the card (DeviceUseSwitch).
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

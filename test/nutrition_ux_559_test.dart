@@ -2,7 +2,7 @@
 // logged, a meal time that can be set after the fact, entries that can be
 // edited rather than only deleted, and today's protein against its target.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';

@@ -8,7 +8,7 @@
 // Product formats only. A QR code is not a food, and reading one here would
 // send whatever a stranger's sticker says to openfoodfacts.org.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../l10n/app_localizations.dart';

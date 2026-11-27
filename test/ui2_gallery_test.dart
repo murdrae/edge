@@ -4,7 +4,7 @@
 // So the two things asserted here are that the flag is OFF on a fresh install,
 // and that nothing in Settings can reach the gallery until it is on.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/ui2/activity/share.dart' show ShareSheet;

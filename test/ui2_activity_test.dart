@@ -14,13 +14,14 @@
 
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/gps/gps_source.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/state/units_controller.dart';
 import 'package:openstrap_edge/ui2/activity/catalogue.dart';
@@ -1626,7 +1627,7 @@ void main() {
       LiveDraft.begin(a, weightKg: 72.4);
       await tester.pumpWidget(MaterialApp(
         locale: const Locale('de'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         theme: buildTheme(Brightness.light),
         home: liveFor(a, weightKg: 72.4),

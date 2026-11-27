@@ -8,7 +8,7 @@ import 'dart:async';
 // reason, the permission is explained where it is asked for, and the empty app
 // list says why it is empty instead of looking broken.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:notification_listener_service/notification_event.dart';
 import 'package:shared_preferences/shared_preferences.dart';

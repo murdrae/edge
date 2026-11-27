@@ -1,7 +1,7 @@
 // Settings > My sources > "Pair a device": the one "Your band" card (no band,
 // a band paired), and what the "Add a device" screen adds (pills, slot chips,
 // the paired notice).
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart' show BluetoothDevice;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ble/adapters/_registry.dart';

@@ -6,8 +6,7 @@
 import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/foundation.dart' show SynchronousFuture;
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:shared_preferences/shared_preferences.dart';
 

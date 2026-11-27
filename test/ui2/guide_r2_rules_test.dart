@@ -1,5 +1,5 @@
 // WHY: user scrolling must update target visibility and marker direction in both directions.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart'; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';
 import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import '../support/live_guide_focus.dart';
 import '../support/guide_r2_scroll_fixture.dart'; import '../support/skeleton_fixture.dart'; void main() {

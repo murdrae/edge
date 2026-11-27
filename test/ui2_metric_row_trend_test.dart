@@ -11,7 +11,7 @@
 // And the direction has to be readable without the hue, because roughly one
 // man in twelve cannot read the hue.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 

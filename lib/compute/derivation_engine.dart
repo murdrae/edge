@@ -2197,7 +2197,10 @@ const String kAnalyticsPin = 'a438df40b38a4586a52a68ab7e1c100fca111ccd';
 // doesn't fit 4- or 8-byte records decodes to nothing). NO kAlgoVersion bump:
 // ingest only, and the Helio adapter already passes the checked count; WHOOP
 // output unchanged.
-const String kProtocolPin = 'e4ccba263dc94d772af122546fc93396243151fd';
+// REPIN: protocol main @ dc699ce (the #86 merge of feat/zepp-family). Same tree
+// as e4ccba2 (tree e8b6297), so NO kAlgoVersion bump: nothing decodes
+// differently.
+const String kProtocolPin = 'dc699ce491c5eec4c924fafe8e29c637ea758b5a';
 
 // Fold idempotency, the minimum-nights warm-up, and legacy-payload handling
 // all live in SleepProfilePolicy (pure, unit-tested) — see

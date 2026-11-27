@@ -17,7 +17,7 @@
 // 2026-08-15 as `Export.db` holds it (29 832 clean NN of 30 117 read, SD1 29.9,
 // SD2 150.7, 17 bins with one hole, 10 435 PRSA anchors).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/ui2/screens/beats.dart';

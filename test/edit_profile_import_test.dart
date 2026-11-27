@@ -8,7 +8,7 @@
 // golden sweep pumps, and a real health-store prompt from a screenshot run is
 // not something to discover on CI.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/profile/settings.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';

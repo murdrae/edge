@@ -1,6 +1,7 @@
 // Focused design regressions for structural review R1-R5. No catalogue or raster audit.
-import 'package:flutter/gestures.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart'; import 'package:flutter/rendering.dart'; import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/grammar.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_routes.dart';
 import 'package:openstrap_edge/ui2/guides/guide_run.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';
@@ -12,13 +13,13 @@ class _ScrollPage { final bool lazy; _ScrollPage({this.lazy = false}); final scr
   Future<void> pump(WidgetTester t) async { t.view.physicalSize = const Size(390, 780); t.view.devicePixelRatio = 1;
     addTearDown(t.view.reset); await t.pumpWidget(GuideDimScope(controller: dim, child: MaterialApp(
       navigatorKey: nav, navigatorObservers: [routes], scrollBehavior: const GuideScrollBehavior(),
-      theme: buildTheme(Brightness.light), localizationsDelegates: AppLocalizations.localizationsDelegates,
+      theme: buildTheme(Brightness.light), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales, home: Scaffold(body: Stack(children: [
         // The page's topmost text line counts as live status (kept lit): a title keeps "Nearby" out of that.
         if (lazy) Positioned(top: 16, left: 16, child: Pressable(key: _target, onTap: () {}, child: const Text('Target')))
         else const Positioned(top: 16, left: 16, child: Text('Page title')),
         Positioned(top: 80, left: 16, right: 16, bottom: 0, child: lazy ? ListView.builder(controller: scroll, itemCount: 100, itemExtent: 100,
-          cacheExtent: 0, itemBuilder: (_, i) => Pressable(key: i == 0 ? _skeleton : i == 80 ? const ValueKey('lazy-target') : null,
+          scrollCacheExtent: const ScrollCacheExtent.pixels(0), itemBuilder: (_, i) => Pressable(key: i == 0 ? _skeleton : i == 80 ? const ValueKey('lazy-target') : null,
             onTap: () => skeletonTaps++, child: Text('Item $i'))) : SingleChildScrollView(controller: scroll,
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             // Window rule: the target's card is the 4th; "Different" is right above it (dimmed); "Nearby" is two cards before the window (a placeholder).

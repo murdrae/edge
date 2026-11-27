@@ -13,7 +13,7 @@ import 'coach_text.dart';
 // rather than a leap, and it is why the local presets come first in setup.
 
 import '../../l10n/display_text.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 // GuideTarget: how a guide finds "the thing to tap" on the real, laid-out screen. Resolution is by TRANSLATED label (so it follows the user's
 // language) or by Key, and a miss is a typed failure - never an empty result that would render a guide pointing at nothing.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide_delete_workout.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart';
 import 'package:openstrap_edge/ui2/guides/guide_remove_detected.dart'; import 'package:openstrap_edge/ui2/ui2.dart';
@@ -77,7 +77,7 @@ Future<(Element, AppLocalizations)> _pumpIn( WidgetTester t, Locale locale, Widg
           expect(detail, contains('Nowhere to be seen')); case TargetFound() || TargetNotBuilt() || TargetAmbiguous(): fail('expected absent, got $r'); } });
     testWidgets('a missing label under a lazy list with room left is TargetNotBuilt, not Absent', (t) async {
       // why: the item may simply not be built yet. Saying "absent" would stop a guide that scrolling could have completed.
-      final (root, l) = await _pumpIn( t, const Locale('en'), (_) => SizedBox( height: 200, child: ListView.builder( cacheExtent: 0,
+      final (root, l) = await _pumpIn( t, const Locale('en'), (_) => SizedBox( height: 200, child: ListView.builder( scrollCacheExtent: const ScrollCacheExtent.pixels(0),
             itemCount: 100, itemBuilder: (_, i) => SizedBox(height: 50, child: Text('row $i')), ), ), );
       final r = GuideTarget.label(fnText((_) => 'row 90')).resolve(root, l); expect(r, isA<TargetNotBuilt>()); });
     testWidgets('a missing key is TargetAbsent', (t) async { final (root, l) = await _pumpIn(t, const Locale('en'), (_) => const Text('x'));
@@ -164,7 +164,7 @@ Future<(Element, AppLocalizations)> _pumpIn( WidgetTester t, Locale locale, Widg
       final r = GuideTarget.anyLabel([fnText((_) => 'Alpha'), fnText((_) => 'Beta')]).resolve(root, l); expect(r, isA<TargetAbsent>());
       expect((r as TargetAbsent).detail, allOf(contains('Alpha'), contains('Beta'))); }); }); group('revealTarget: bounded scroll discovery (item 4)', () {
     Widget list({int count = 100, double cache = 0, ScrollController? c, Widget Function(int)? row}) => SizedBox( height: 200,
-          child: ListView.builder( controller: c, cacheExtent: cache, itemCount: count,
+          child: ListView.builder( controller: c, scrollCacheExtent: ScrollCacheExtent.pixels(cache), itemCount: count,
             itemBuilder: (_, i) => SizedBox(height: 50, child: row?.call(i) ?? Text('row $i', style: const TextStyle(fontSize: 10))), ), );
     testWidgets('a cancelled search stops moving the page on later frames', (t) async {
       // WHY: CLAIM(reveal-frame-boundary). Exiting or navigating while discovery awaits layout must stop it from continuing to scroll the user's page.
@@ -177,7 +177,7 @@ Future<(Element, AppLocalizations)> _pumpIn( WidgetTester t, Locale locale, Widg
       final (root, l) = await _pumpIn(t, const Locale('en'), (_) => list());
       final search = revealTarget(root, GuideTarget.label(fnText((_) => 'row 90')), l); await t.pumpWidget(const SizedBox());
       expect(await pumpGuideSearch(t, search), isA<TargetNotBuilt>()); expect(t.takeException(), isNull); });
-    testWidgets('finds a target 5 viewports away with cacheExtent 0, and leaves it visible', (t) async {
+    testWidgets('finds a target 5 viewports away with scrollCacheExtent 0, and leaves it visible', (t) async {
       // why: the resolver alone cannot see an unbuilt lazy child; the 200 px viewport shows rows 0-3, row 20 is 1000 px (5 viewports) down.
       final c = ScrollController(); addTearDown(c.dispose); final (root, l) = await _pumpIn(t, const Locale('en'), (_) => list(c: c));
       final target = GuideTarget.label(fnText((_) => 'row 20')); expect(target.resolve(root, l), isA<TargetNotBuilt>(), reason: 'precondition: not built yet');
@@ -186,8 +186,8 @@ Future<(Element, AppLocalizations)> _pumpIn( WidgetTester t, Locale locale, Widg
       expect(skContains(viewport, rect), isTrue, reason: 'target $rect must end inside the viewport $viewport'); expect(c.offset, greaterThan(0)); });
     testWidgets('nested scrolling: a target deep inside an inner list inside an outer list', (t) async {
       // why: guide screens nest lists (a card holding a list). Discovery must advance the outer list to the card, then the inner one.
-      final (root, l) = await _pumpIn( t, const Locale('en'), (_) => SizedBox( height: 300, child: ListView(cacheExtent: 0, children: [
-            const SizedBox(height: 1500), SizedBox( height: 200, child: ListView.builder( cacheExtent: 0, itemCount: 60,
+      final (root, l) = await _pumpIn( t, const Locale('en'), (_) => SizedBox( height: 300, child: ListView(scrollCacheExtent: const ScrollCacheExtent.pixels(0), children: [
+            const SizedBox(height: 1500), SizedBox( height: 200, child: ListView.builder( scrollCacheExtent: const ScrollCacheExtent.pixels(0), itemCount: 60,
                 itemBuilder: (_, i) => SizedBox(height: 50, child: Text('inner $i')), ), ), const SizedBox(height: 600), ]), ), );
       final r = await pumpGuideSearch(t, revealTarget(root, GuideTarget.label(fnText((_) => 'inner 40')), l)); await t.pump(); expect(r, isA<TargetFound>()); });
     testWidgets('starts near the bottom: a target ABOVE the built range is found (G3)', (t) async {

@@ -2,7 +2,7 @@
 // enforces — no usual range, no colour at all — is the whole honesty of the
 // picture.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/home_screen.dart' show ChartPoint;
 import 'package:openstrap_edge/ui2/screens/month_grid.dart';

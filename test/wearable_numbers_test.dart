@@ -3,7 +3,7 @@
 // scores on its page, and "what this wearable unlocks" read off the table
 // (lib/ui2/profile/wearable_numbers.dart, PLAN_multidevice_analytics §7).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/compute/inputs/canonical.dart';
 import 'package:openstrap_edge/compute/inputs/colmi_inputs.dart';
@@ -12,6 +12,7 @@ import 'package:openstrap_edge/compute/inputs/miband_inputs.dart';
 import 'package:openstrap_edge/compute/inputs/pebble_inputs.dart';
 import 'package:openstrap_edge/compute/inputs/ultrahuman_inputs.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/state/units_controller.dart';
 import 'package:openstrap_edge/ui2/profile/pair_sensor.dart';
@@ -29,7 +30,7 @@ Future<void> _pump(WidgetTester t, Widget w, {Locale? locale}) async {
   await t.pumpWidget(MaterialApp(
     theme: buildTheme(Brightness.light),
     locale: locale,
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(body: ListView(children: [w])),
   ));

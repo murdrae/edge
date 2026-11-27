@@ -6,7 +6,7 @@
 // a ceiling a mis-tap can enter a value that dominates every correlation it
 // appears in.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../data/journal_fields.dart';

@@ -12,7 +12,7 @@ import '../../l10n/display_text.dart';
 // midpoint of two sexes is a third person. Everything else that is blank
 // simply withholds the metrics that need it.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 
 import '../../compute/profile.dart'

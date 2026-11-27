@@ -6,7 +6,7 @@
 //
 // getters (lib/l10n/app_en.arb): homeRingStrain, dayStrainHowSet, activityZonesSetYourOwnLink / activityZonesEditYourOwnLink,
 // activityZonesYourZonesSection, dayStrainTimeInZonesSection.
-import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/activity/day_strain.dart';
 import 'package:openstrap_edge/ui2/activity/zones.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_heart_rate_zones.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';

@@ -3,7 +3,7 @@
 // The LLM is mocked (BriefingComplete injected) — no network.
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,6 +14,7 @@ import 'package:openstrap_edge/coach/coach_config.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/screens/ai_briefing.dart' show SentPayload;
 import 'package:openstrap_edge/ui2/ui2.dart' show buildTheme;
 import 'package:openstrap_edge/state/prefs.dart';
@@ -568,7 +569,7 @@ void main() {
     Future<String> bannerFor(WidgetTester tester, String? endpoint) async {
       await tester.pumpWidget(MaterialApp(
         theme: buildTheme(Brightness.dark),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: SingleChildScrollView(

@@ -1,7 +1,7 @@
 // Small pieces the pairing screens share: a numbered step, a text link and a
 // tappable icon row. Kept in one file so the screens read
 // alike; none of them knows anything about pairing itself.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../ui2.dart';

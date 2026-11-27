@@ -4,7 +4,7 @@
 // `_loading` set for good, so the section showed a spinner forever with no
 // error and no way to retry. A read that throws now ends in a retryable card.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

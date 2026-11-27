@@ -1,7 +1,7 @@
 // GuideStepView / GuideView (test/support: review tooling, never shipped): the demo frame around a skeletonized real screen. The marker rules it shares with the
 // live overlay (GuidePillLayout, legibleContent) live in guide_markers.dart. Hand-built screens of real ui2 cards; the real guide #1 is covered in
 // guide_heart_rate_zones_test.dart.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/guides/guide_markers.dart';
 import 'package:openstrap_edge/ui2/skeleton/skeleton.dart'; import 'package:openstrap_edge/ui2/ui2.dart';

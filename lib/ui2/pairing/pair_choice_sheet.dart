@@ -2,7 +2,7 @@
 // THE table with the device's column washed, a note, one filled main button,
 // an optional second choice as a text link, and "Go back". The callers differ
 // only in words, so there is one sheet.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../ble/slot_comparison.dart';
 import '../ui2.dart';

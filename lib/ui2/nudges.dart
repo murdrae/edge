@@ -4,7 +4,7 @@
 // user says so, via the same `Prefs` facade every other one-time UI flag
 // uses. Both can be up at once, stacked — each is dismissed on its own.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../l10n/app_localizations.dart';

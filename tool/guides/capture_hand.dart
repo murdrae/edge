@@ -1,7 +1,7 @@
 // Uses Flutter test instrumentation in an explicit capture/profile command.
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 // Round 7 evidence: every step, real app pages, dark, bundled fonts.
-import 'dart:io'; import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:io'; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import 'package:path/path.dart' as p;
 import '../../test/support/bundled_fonts.dart'; import '../../test/support/guide_r2_scenes.dart';
 import '../../test/support/guide_r7_scenes.dart'; import '../../test/support/skeleton_fixture.dart' show skLoadAppFonts;

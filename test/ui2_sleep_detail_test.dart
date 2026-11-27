@@ -6,11 +6,12 @@
 // last night was extreme enough to mention, and whether there is enough history
 // to say either. This pumps the whole page into a tall viewport and reads it.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/ui2/screens/screens.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -302,7 +303,7 @@ void main() {
       addTearDown(t.view.reset);
       await t.pumpWidget(MaterialApp(
         locale: Locale(lang),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         theme: buildTheme(Brightness.light),
         builder: (c, child) => MediaQuery(

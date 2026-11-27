@@ -17,7 +17,7 @@
 // lowest-HR windows rather than step counts, and the card says so out loud
 // rather than letting the numbers imply accelerometry.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' as ana;
 

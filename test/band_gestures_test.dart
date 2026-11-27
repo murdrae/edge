@@ -10,7 +10,7 @@
 // Rendered, not read: this project has paid three times for layout faults that
 // inspecting a widget tree does not find.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/gestures/device_action.dart';
 import 'package:openstrap_edge/gestures/gesture_dispatcher.dart';

@@ -23,7 +23,7 @@ Builds:
     commit: v0.10.0  # TODO: bump to the first tag that has docs/fdroid
     output: build/app/outputs/flutter-apk/app-release.apk
     srclibs:
-      - flutter@3.41.6
+      - flutter@3.50.1
     rm:
       - ios
       - lib/firebase_options.dart

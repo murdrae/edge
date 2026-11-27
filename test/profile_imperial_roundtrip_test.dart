@@ -3,7 +3,7 @@
 // so 72.5 kg became 72.57 kg and 178 cm became 177.8 cm on every save — a
 // rename moved the stored body.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/state/units_controller.dart';
 import 'package:openstrap_edge/ui2/profile/settings.dart';

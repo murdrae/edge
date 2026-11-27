@@ -5,7 +5,7 @@
 // and prediction looked gone and the screen offered to turn on a feature that
 // was already on.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/cycle_screen.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';

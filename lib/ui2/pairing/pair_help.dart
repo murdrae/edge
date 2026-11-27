@@ -2,7 +2,7 @@
 // list their ways out: each band's official pairing-mode page and the
 // project's Discord. Nothing expands, so nothing shifts. Links open in the
 // user's own browser, never inside the app.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

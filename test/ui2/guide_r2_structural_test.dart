@@ -3,7 +3,7 @@
 // "Move card up/down", one guide finished from announced nodes only).
 //
 // Every test states its WHY and `# catches:`.
-import 'package:flutter/material.dart'; import 'package:flutter/semantics.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/semantics.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/db.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
 import 'package:openstrap_edge/ui2/grammar.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';

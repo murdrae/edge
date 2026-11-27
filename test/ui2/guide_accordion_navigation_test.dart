@@ -1,5 +1,5 @@
 // WHY: accordion headers are navigation. A collapsed body must be a user-tapped hop, never a missing target or an input dead end (owner's Sleep repro).
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/activity/picker.dart'; import 'package:openstrap_edge/ui2/activity/catalogue.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_navigation.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import '../support/guide_text.dart';

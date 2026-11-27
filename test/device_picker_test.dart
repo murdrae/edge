@@ -3,12 +3,13 @@
 // more than once; see pair_sensor_test.dart's header for the precedent this
 // file follows.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart' show BluetoothDevice;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ble/adapters/_registry.dart';
 import 'package:openstrap_edge/ble/hrs_link.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/pairing/device_picker.dart';
 import 'package:openstrap_edge/ui2/profile/devices.dart' show kPairableSensors;
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -227,7 +228,7 @@ void main() {
     late String blurb;
     await t.pumpWidget(MaterialApp(
       locale: const Locale('de'),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Builder(builder: (c) {
         blurb = debugCategoryBlurb(c, kUltrahuman);
@@ -243,7 +244,7 @@ void main() {
     Future<void> pumpFr(String? busy) async {
       await t.pumpWidget(MaterialApp(
         locale: const Locale('fr'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: _view(
             found: [_cand('AA', 'miband234', label: 'MI Band 2')],

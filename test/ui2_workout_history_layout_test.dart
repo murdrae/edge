@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/db.dart'; import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/state/app_state.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/prefs.dart'; import 'package:openstrap_edge/state/units_controller.dart';
 import 'package:openstrap_edge/ui2/grammar.dart'; import 'package:openstrap_edge/ui2/screens/workout_screen.dart';
 import 'package:openstrap_edge/ui2/theme.dart'; import 'package:path/path.dart' as p; import 'package:provider/provider.dart';
@@ -24,7 +25,7 @@ void main() { setUpAll(() async { sqfliteFfiInit();
       addTearDown(app.dispose); final l = lookupAppLocalizations(const Locale('de')); await t.pumpWidget(MultiProvider( providers: [
           ChangeNotifierProvider<AppState>.value(value: app), ChangeNotifierProvider<UnitsController>(
               create: (_) => UnitsController.seed(UnitSystem.metric)), ], child: MaterialApp( theme: buildTheme(Brightness.light),
-          locale: const Locale('de'), localizationsDelegates: AppLocalizations.localizationsDelegates,
+          locale: const Locale('de'), localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales, builder: (context, child) => MediaQuery(
             data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(scale)), child: child!, ),
           home: const Scaffold(body: WorkoutScreen()), ), )); await t.pumpAndSettle();

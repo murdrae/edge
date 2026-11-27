@@ -2,7 +2,7 @@
 //
 // why: the guide review renders showed hollow squares for the tap-marker arrow and every screen icon, because flutter_test loads no icon font. These tests
 // fail if either font stops being registered (Lucide under its package-scoped family, MaterialIcons under its bare name).
-import 'dart:typed_data'; import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:typed_data'; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart'; import '../support/skeleton_fixture.dart'; const _boundaryKey = ValueKey('icon-boundary');
 /// Renders [icon] black on white at 48 px and returns its alpha-free luminance
 /// mask: one byte per pixel, 0 = background, 255 = ink.

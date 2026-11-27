@@ -36,7 +36,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart' show FontLoader;
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -44,6 +44,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/state/clock_format.dart' show formatClockOf;
 import 'package:openstrap_edge/state/locale_controller.dart';
@@ -115,7 +116,7 @@ Future<void> _rings(WidgetTester t, HomeData d,
   await t.pumpWidget(MaterialApp(
     locale: locale,
     theme: _themeWithThai(),
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(
         body: SingleChildScrollView(

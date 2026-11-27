@@ -10,7 +10,7 @@ import 'dart:math' as math;
 // Everything here is derived from a laid-out tree; nothing knows about a screen.
 
 import 'package:flutter/foundation.dart' show ValueListenable;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 

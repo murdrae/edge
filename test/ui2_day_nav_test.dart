@@ -5,7 +5,7 @@
 // turns "the fourteenth dot on a 30-day line" into a day you can open. Get the
 // second one wrong by one and the tap opens the wrong night.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/ui2/screens/metric_detail.dart';

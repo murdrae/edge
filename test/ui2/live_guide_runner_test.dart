@@ -2,7 +2,7 @@
 //
 // The shell is represented by a recording [GuideShellLink]: its two methods are the ONLY thing a run asks of the shell, so the order and arguments of those
 // calls are the contract. The full app (real AppShell) is covered in live_guide_integration_test.dart.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/state/prefs.dart'; import 'package:openstrap_edge/ui2/app_shell.dart' show ShellDomain;
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_runner.dart'; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';

@@ -22,7 +22,7 @@
 // arithmetic and only one of them is bad news, and the screen has no way to
 // know which. Arrows say which way; nothing says whether.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ai/briefing_engine.dart' show collectSweepSeries;

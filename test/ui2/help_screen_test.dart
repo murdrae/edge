@@ -1,7 +1,8 @@
 // Profile Help placement and the grouped, band-filtered guide list.
-import 'package:flutter/material.dart'; import 'package:lucide_icons_flutter/lucide_icons.dart'; import 'package:flutter/semantics.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:lucide_icons_flutter/lucide_icons.dart'; import 'package:flutter/semantics.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart'; import 'package:shared_preferences/shared_preferences.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/state/app_state.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/clock_format.dart'; import 'package:openstrap_edge/state/locale_controller.dart';
 import 'package:openstrap_edge/state/units_controller.dart'; import 'package:openstrap_edge/theme/theme_controller.dart';
 import 'package:openstrap_edge/sync/paired_device.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
@@ -28,7 +29,7 @@ Widget _profileHost(Widget home, {AppState? app}) => MultiProvider( providers: [
           ChangeNotifierProvider(create: (_) => UnitsController.seed(UnitSystem.metric)),
           ChangeNotifierProvider(create: (_) => ThemeController.seed(AppThemeChoice.light, Brightness.light)),
           ChangeNotifierProvider(create: (_) => ClockFormatController.seed(ClockFormat.h24)), ], ], child: MaterialApp(
-        theme: buildTheme(Brightness.light), localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, home: home, ), );
+        theme: buildTheme(Brightness.light), localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, home: home, ), );
 void main() { setUp(() => SharedPreferences.setMockInitialValues({}));
   group('the Profile row', () { testWidgets('Help follows AI coach in Quick access, outside Your data', (t) async {
       // why: the owner chose Quick access; a row-order assertion alone misses a misplaced group.

@@ -1,8 +1,9 @@
 // A page with a PINNED target above a long scrolling list of every kind of unit: banners (coloured Surface), loose text, tappable rows, Sections, alerts. The list
 // scrolls, flings and overscrolls under a running guide; the target never moves, so every frame can be audited. One caption-named unit ("Kept note") sits inside the
 // list and MOVES with it: it must stay clear in every frame.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 import 'package:openstrap_edge/ui2/guides/guide_routes.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart';
@@ -20,7 +21,7 @@ class R2FlowFixture { final navKey = GlobalKey<NavigatorState>(); final routes =
   Future<void> pump(WidgetTester t) async { t.view.physicalSize = size; t.view.devicePixelRatio = 1; addTearDown(t.view.reset);
     await t.pumpWidget(GuideDimScope(controller: dim, child: RepaintBoundary(key: r2Capture, child: MaterialApp(
       scrollBehavior: const GuideScrollBehavior(), navigatorKey: navKey, navigatorObservers: [routes], theme: buildTheme(Brightness.light),
-      debugShowCheckedModeBanner: false, locale: const Locale('en'), localizationsDelegates: AppLocalizations.localizationsDelegates,
+      debugShowCheckedModeBanner: false, locale: const Locale('en'), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales, home: home)))); await t.pump();
     final guide = Guide(id: 'flow-fixture', title: fnText((_) => 'Flow'), start: GuideStart.today,
       variants: [GuideVariant(steps: [GuideStep(id: 'target', target: GuideTarget.key(flowTarget), anchor: GuideTarget.key(flowTarget), action: GuideAction.tap,

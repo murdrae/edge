@@ -3,7 +3,7 @@
 //
 // The overlay is inserted into the ROOT overlay by the test itself, so these tests cover drawing, input and semantics apart from GuideRunner's navigation
 // (live_guide_runner_test.dart) and from the full app (live_guide_integration_test.dart).
-import '../support/live_guide_focus.dart'; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import '../support/live_guide_focus.dart'; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/guides/guide_markers.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_step_card.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';

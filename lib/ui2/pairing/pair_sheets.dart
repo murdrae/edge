@@ -5,7 +5,7 @@
 //    only";
 //  - a ring or a watch: "Every day" washed, the experimental note, "Pair (it)";
 //  - a heart-rate strap with no band paired: "Workouts only" washed.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

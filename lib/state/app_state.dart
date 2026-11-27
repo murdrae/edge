@@ -2078,6 +2078,7 @@ class AppState extends ChangeNotifier {
       onMarkMoment: _markMomentFromGesture,
       onWorkoutToggle: _toggleWorkoutFromGesture,
       onLogWater: _logWaterFromGesture,
+      onMeditationTimer: _toggleMeditationFromGesture,
     );
     engine = BleEngine(
       onRecord: _onRecord,
@@ -2233,6 +2234,7 @@ class AppState extends ChangeNotifier {
       onMarkMoment: _markMomentFromGesture,
       onWorkoutToggle: _toggleWorkoutFromGesture,
       onLogWater: _logWaterFromGesture,
+      onMeditationTimer: _toggleMeditationFromGesture,
     );
     this.engine = engine ??
         BleEngine(
@@ -2332,6 +2334,8 @@ class AppState extends ChangeNotifier {
 
   @override
   void dispose() {
+    _meditationAt12?.cancel();
+    _meditationAt14?.cancel();
     unawaited(_scaleWatcher?.stop());
     _deriveCoordinator.cancelActivityReviewRetry();
     if (IosShortcutSync.foregroundSync == syncForShortcut) {
@@ -6322,6 +6326,42 @@ class AppState extends ChangeNotifier {
   /// Pulse the strap so it can be heard/felt during a find-my-strap hunt.
   /// Unlike [testAlarmBuzz] this NEVER throws — the hunt screen fires it on a
   /// timer and a momentary disconnect must not surface as an error dialog.
+  // Phone-managed fallback. WHOOP 4.0 has one documented alarm slot;
+  // never replace the user's wake alarm with a meditation alarm.
+  Timer? _meditationAt12;
+  Timer? _meditationAt14;
+  bool _meditationRunning = false;
+
+  Future<void> _toggleMeditationFromGesture() async {
+    if (_meditationRunning) {
+      _meditationAt12?.cancel();
+      _meditationAt14?.cancel();
+      _meditationAt12 = null;
+      _meditationAt14 = null;
+      _meditationRunning = false;
+      _log('[meditation] cancelled by double-tap');
+      await buzzBand();
+      return;
+    }
+    if (!isConnected) {
+      _log('[meditation] cannot start without connected strap');
+      return;
+    }
+    _meditationRunning = true;
+    _meditationAt12 = Timer(const Duration(minutes: 12), () {
+      if (_meditationRunning) unawaited(buzzBand());
+    });
+    _meditationAt14 = Timer(const Duration(minutes: 14), () {
+      if (!_meditationRunning) return;
+      _meditationRunning = false;
+      _meditationAt12 = null;
+      _meditationAt14 = null;
+      unawaited(buzzBand());
+    });
+    _log('[meditation] started (phone-managed fallback)');
+    await buzzBand();
+  }
+
   Future<void> buzzBand() async {
     if (!isConnected) return;
     try {

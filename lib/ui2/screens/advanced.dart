@@ -6,7 +6,7 @@
 // want them. They are not what anyone needs to read on the way to "how did I
 // sleep?", so they live here rather than in the main flow.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../l10n/app_localizations.dart';

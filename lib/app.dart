@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +9,7 @@ import 'coach/coach_config.dart';
 import 'data/db.dart';
 import 'data/backup_extras.dart' show settingsRestoredSignal;
 import 'l10n/app_localizations.dart';
+import 'l10n/delegates.dart';
 import 'notify/notification_service.dart';
 import 'notify/tap_router.dart';
 import 'platform/activity_relaunch.dart';
@@ -208,7 +209,7 @@ class _OpenStrapAppState extends State<OpenStrapApp> with WidgetsBindingObserver
       // First, so a 12-hour choice reaches the time pickers (see the delegate).
       localizationsDelegates: [
         ClockMaterialLocalizationsDelegate(twelveHour: twelveHour),
-        ...AppLocalizations.localizationsDelegates,
+        ...appLocalizationsDelegates,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       // Runs even when `locale:` above has a user override — Flutter still
