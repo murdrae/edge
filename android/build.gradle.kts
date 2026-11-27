@@ -4,16 +4,15 @@ allprojects {
         mavenCentral()
     }
     // Pin a single androidx.work version across ALL modules (incl. the workmanager
-    // plugin). The workmanager 0.5.2 plugin pulls work-runtime-ktx:2.7.1 while the
-    // newer transitive graph pulls work-runtime:2.8.1 — the mismatch duplicates
-    // androidx.work.*Kt classes (CheckDuplicates failure) and breaks the plugin's
-    // Kotlin compile. work-runtime-ktx:2.8.1 is a stub (ktx merged into runtime at
-    // 2.8), so forcing both to 2.8.1 deduplicates cleanly.
+    // plugin) so no module drags in an older copy (duplicate androidx.work.*Kt
+    // classes). workmanager_android 0.10.x compiles against work-runtime 2.11.2 and
+    // uses APIs added in 2.9 (ListenableWorker.stopReason, WorkInfo.periodicityInfo),
+    // so the pin must be at least that version. work-runtime-ktx is a stub since 2.8.
 
     configurations.all {
         resolutionStrategy {
-            force("androidx.work:work-runtime:2.8.1")
-            force("androidx.work:work-runtime-ktx:2.8.1")
+            force("androidx.work:work-runtime:2.11.2")
+            force("androidx.work:work-runtime-ktx:2.11.2")
         }
     }
 }

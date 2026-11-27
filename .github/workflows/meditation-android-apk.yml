@@ -51,7 +51,7 @@ jobs:
           grep -A 12 -B 2 '"name": "workmanager_android"' .flutter-plugins-dependencies || true
           echo "Kotlin compilation tasks:"
           if [ -f android/gradlew ]; then
-            (cd android && sh ./gradlew :workmanager_android:tasks --all --console=plain) | grep -E 'compileDebugKotlin|compileDebugJava' || true
+            (cd android && bash ./gradlew :workmanager_android:tasks --all --console=plain) | grep -E 'compileDebugKotlin|compileDebugJava' || true
           else
             echo "Gradle wrapper script is absent"
           fi
