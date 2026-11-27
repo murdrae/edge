@@ -29,6 +29,21 @@ jobs:
         run: flutter test test/gesture_controller_test.dart
       - name: Build debug APK
         run: flutter build apk --debug
+      - name: Diagnose Workmanager registration on build failure
+        if: failure()
+        shell: bash
+        run: |
+          echo "Resolved Workmanager packages:"
+          grep -A 7 -E '^  workmanager(_android)?:' pubspec.lock || true
+          echo "Android plugin source:"
+          find "$HOME/.pub-cache" -path '*workmanager_android*/android/src/main/*/dev/fluttercommunity/workmanager/*Plugin*' -print | head -30
+          echo "Compiled Workmanager classes:"
+          find build android -type f \( -name '*WorkmanagerPlugin*' -o -name '*workmanager*.jar' \) -print 2>/dev/null | head -80
+          echo "Flutter plugin registration metadata:"
+          grep -A 12 -B 2 '"name": "workmanager_android"' .flutter-plugins-dependencies || true
+          echo "Kotlin compilation tasks:"
+          cd android
+          ./gradlew :workmanager_android:tasks --all --console=plain | grep -E 'compileDebugKotlin|compileDebugJava' || true
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
