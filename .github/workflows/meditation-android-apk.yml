@@ -27,13 +27,14 @@ jobs:
         run: flutter pub get
       - name: Test meditation gesture
         run: flutter test test/gesture_controller_test.dart
-      - name: Verify Workmanager Kotlin compilation
+      - name: Inspect Gradle wrapper availability
         shell: bash
         run: |
-          cd android
-          ./gradlew :workmanager_android:compileDebugKotlin --console=plain --info
-          echo "Compiled Workmanager class files:"
-          find ../build/workmanager_android build -type f -name '*WorkmanagerPlugin*' -print 2>/dev/null || true
+          if [ -f android/gradlew ]; then
+            echo "Gradle wrapper script present"
+          else
+            echo "No android/gradlew script in checkout; Flutter will invoke Gradle during APK build."
+          fi
       - name: Build debug APK
         run: flutter build apk --debug
       - name: Diagnose Workmanager registration on build failure
@@ -49,8 +50,11 @@ jobs:
           echo "Flutter plugin registration metadata:"
           grep -A 12 -B 2 '"name": "workmanager_android"' .flutter-plugins-dependencies || true
           echo "Kotlin compilation tasks:"
-          cd android
-          ./gradlew :workmanager_android:tasks --all --console=plain | grep -E 'compileDebugKotlin|compileDebugJava' || true
+          if [ -f android/gradlew ]; then
+            (cd android && sh ./gradlew :workmanager_android:tasks --all --console=plain) | grep -E 'compileDebugKotlin|compileDebugJava' || true
+          else
+            echo "Gradle wrapper script is absent"
+          fi
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
