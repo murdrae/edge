@@ -639,7 +639,7 @@ dependencies:
   share_plus: ^10.1.4
 
   # File picker for data imports (NOOP raw CSV, Edge .db backup, WHOOP export CSV).
-  file_picker: ^8.1.6
+  file_picker: ^10.3.11
 
   # Apple Health (HealthKit, iOS) + Google Health Connect (Android) — export each
   # day's derived metrics to the platform health store.
