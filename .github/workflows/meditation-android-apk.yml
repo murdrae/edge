@@ -27,6 +27,13 @@ jobs:
         run: flutter pub get
       - name: Test meditation gesture
         run: flutter test test/gesture_controller_test.dart
+      - name: Verify Workmanager Kotlin compilation
+        shell: bash
+        run: |
+          cd android
+          ./gradlew :workmanager_android:compileDebugKotlin --console=plain --info
+          echo "Compiled Workmanager class files:"
+          find ../build/workmanager_android build -type f -name '*WorkmanagerPlugin*' -print 2>/dev/null || true
       - name: Build debug APK
         run: flutter build apk --debug
       - name: Diagnose Workmanager registration on build failure
