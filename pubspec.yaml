@@ -579,7 +579,7 @@ dependencies:
   # 24-h spectra). Android: a real OS-scheduled WorkManager job. iOS: see the
   # honest caveat in lib/compute/background_derivation.dart — app-killed heavy
   # compute is opportunistic via BGTaskScheduler, never guaranteed.
-  workmanager: ^0.9.0
+  workmanager: ^0.10.10
 
   # HTTP — retained ONLY for the OTA self-update pointer (see lib/sync/update_service.dart)
   # and the AI Coach's direct LLM (BYOK) calls. No backend / auth traffic anymore.
@@ -645,7 +645,7 @@ dependencies:
   share_plus: ^10.1.4
 
   # File picker for data imports (NOOP raw CSV, Edge .db backup, WHOOP export CSV).
-  file_picker: ^8.1.6
+  file_picker: ^10.3.10
 
   # Apple Health (HealthKit, iOS) + Google Health Connect (Android) — export each
   # day's derived metrics to the platform health store.

@@ -1,0 +1,64 @@
+name: Meditation Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/whoop4-meditation-timer
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.50.1
+          channel: stable
+          cache: true
+      - name: Flutter version
+        run: flutter --version
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Test meditation gesture
+        run: flutter test test/gesture_controller_test.dart
+      - name: Inspect Gradle wrapper availability
+        shell: bash
+        run: |
+          if [ -f android/gradlew ]; then
+            echo "Gradle wrapper script present"
+          else
+            echo "No android/gradlew script in checkout; Flutter will invoke Gradle during APK build."
+          fi
+      - name: Build debug APK
+        run: flutter build apk --debug
+      - name: Diagnose Workmanager registration on build failure
+        if: failure()
+        shell: bash
+        run: |
+          echo "Resolved Workmanager packages:"
+          grep -A 7 -E '^  workmanager(_android)?:' pubspec.lock || true
+          echo "Android plugin source:"
+          find "$HOME/.pub-cache" -path '*workmanager_android*/android/src/main/*/dev/fluttercommunity/workmanager/*Plugin*' -print | head -30
+          echo "Compiled Workmanager classes:"
+          find build android -type f \( -name '*WorkmanagerPlugin*' -o -name '*workmanager*.jar' \) -print 2>/dev/null | head -80
+          echo "Flutter plugin registration metadata:"
+          grep -A 12 -B 2 '"name": "workmanager_android"' .flutter-plugins-dependencies || true
+          echo "Kotlin compilation tasks:"
+          if [ -f android/gradlew ]; then
+            (cd android && bash ./gradlew :workmanager_android:tasks --all --console=plain) | grep -E 'compileDebugKotlin|compileDebugJava' || true
+          else
+            echo "Gradle wrapper script is absent"
+          fi
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: openstrap-meditation-android-debug
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 14

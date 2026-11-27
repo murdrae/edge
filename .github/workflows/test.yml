@@ -28,15 +28,18 @@ jobs:
           persist-credentials: false
 
       # PINNED, not `channel: stable`. A floating channel means the toolchain
-      # changes underneath an already reviewed commit — the same reasoning as
-      # the commit-SHA pins for sibling packages in pubspec.yaml. It has bitten
-      # before: 3.44 made IconData a final class (phosphor_flutter stopped
-      # compiling), CupertinoPageTransitionsBuilder moved libraries (see
-      # lib/theme/theme.dart), and 3.47 deprecated package:flutter/material.dart
-      # and cupertino.dart for the material_ui / cupertino_ui packages, which
-      # `flutter analyze` below treats as fatal. Bump this deliberately, in
-      # every workflow at once, and fix what the new SDK flags in the same
-      # change rather than suppressing it.
+      # changes underneath an already reviewed commit — the same reasoning as the
+      # commit-SHA pins for sibling packages in pubspec.yaml. Bump this
+      # deliberately, and keep every workflow (build, soak, meditation APK) on
+      # the same version: dev dependencies like analyzer only resolve against
+      # one Dart SDK range. Fix what a new SDK flags in the same change rather
+      # than suppressing it — `flutter analyze` below treats infos as fatal.
+      #
+      # History: 3.44+ used to fail on phosphor_flutter (IconData became a final
+      # class; the dependency is now dropped) and on CupertinoPageTransitionsBuilder
+      # moving libraries (lib/theme/theme.dart no longer names it). 3.47
+      # deprecated package:flutter/material.dart and cupertino.dart for the
+      # material_ui / cupertino_ui packages, which the app now imports.
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: 3.50.1

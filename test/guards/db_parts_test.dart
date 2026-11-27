@@ -6,12 +6,12 @@ import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _ExecuteCalls extends RecursiveAstVisitor<void> {
-  final arguments = <Expression>[];
+  final arguments = <Argument>[];
 
   @override
   void visitMethodInvocation(MethodInvocation node) {
     if (node.methodName.name == 'execute') {
-      arguments.add(node.argumentList.arguments.first.argumentExpression);
+      arguments.add(node.argumentList.arguments.first);
     }
     super.visitMethodInvocation(node);
   }
