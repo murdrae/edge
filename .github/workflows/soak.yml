@@ -34,7 +34,7 @@ jobs:
       matrix:
         device: [gen4, mg]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false
 
@@ -61,7 +61,7 @@ jobs:
 
       - name: Keep the size report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: db-growth-${{ matrix.device }}
           path: build/soak/db_growth.csv

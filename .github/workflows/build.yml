@@ -22,7 +22,7 @@ jobs:
   preflight:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0   # all tags, so the versionCode guard can read prior releases' pubspec
           persist-credentials: false   # nothing here writes to the repo
@@ -174,7 +174,7 @@ jobs:
     needs: preflight
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           sparse-checkout: .github/scripts
           persist-credentials: false   # nothing here writes to the repo
@@ -223,7 +223,7 @@ jobs:
       # nothing in this job reads git. `generate_release_notes` builds its diff on
       # GitHub's side from the tag, not from local history — the ios job has always
       # run shallow and attaches to the same release without trouble.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false   # nothing here writes to the repo
 
@@ -233,7 +233,7 @@ jobs:
           TAG: ${{ github.ref_name }}
         run: bash .github/scripts/assert_release_unpublished.sh "$TAG"
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -317,7 +317,7 @@ jobs:
           cp build/app/outputs/flutter-apk/app-release.apk "$apk"
           echo "apk=$apk" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: openstrap-edge-apk-${{ matrix.variant }}
           path: ${{ steps.rename.outputs.apk }}
@@ -363,7 +363,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false   # nothing here writes to the repo
 
@@ -472,7 +472,7 @@ jobs:
           zip -qr -y "$IPA" Payload
           echo "ipa=openstrap-edge-${GITHUB_REF_NAME}-unsigned.ipa" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: openstrap-edge-ipa
           path: ${{ steps.ipa.outputs.ipa }}
