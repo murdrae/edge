@@ -5,7 +5,7 @@
 // read the grant once in initState, so a user who then found the switch in OS
 // Settings by hand came back to a card still saying notifications were off.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

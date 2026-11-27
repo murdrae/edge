@@ -3,7 +3,7 @@
 // the tap grace held "Connecting to your band" up for 20 s over nothing, and
 // nothing on Home pointed at pairing. With no band, the card offers pairing.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 

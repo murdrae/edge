@@ -3,8 +3,8 @@
 // Time is the fake-async clock only: every capture is stamped with the offset
 // the test asked for, never a clock read. A tap records an Interaction (so the
 // scorer applies the latency curve); a background refresh records none.
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'layout_shift/layout_shift.dart';

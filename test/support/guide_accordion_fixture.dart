@@ -1,5 +1,5 @@
 // Fixture for the reusable accordion boundary; main's Sleep page has no accordions.
-import 'package:flutter/material.dart'; import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_edge/ui2/ui2.dart'; import 'package:openstrap_edge/ui2/guides/guide_accordion.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 String accordionPrefKey(String id) => 'accordion_$id';
 /// A titled card whose rows open and close behind an explicit header tap. It

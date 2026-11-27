@@ -1,5 +1,5 @@
 // Consolidated regressions; each group retains its own test lifecycle.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';
 import 'package:openstrap_edge/ui2/skeleton/guide_plot.dart'; import 'package:openstrap_edge/ui2/skeleton/skeleton.dart';

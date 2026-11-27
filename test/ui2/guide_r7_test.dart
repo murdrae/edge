@@ -1,5 +1,5 @@
 // Structural design checks, one per R7 rule. Actual scenes supply an independent catalogue of all 22 steps; no per-guide motion switch exists.
-import 'dart:math' as math; import 'package:flutter/gestures.dart' show PointerDeviceKind; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:math' as math; import 'package:flutter/gestures.dart' show PointerDeviceKind; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/guides/guide_catalogue.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart' show GuideUnitLook; import 'package:openstrap_edge/ui2/guides/guide_hand.dart';
 import 'package:openstrap_edge/ui2/guides/guide_markers.dart'; import 'package:openstrap_edge/ui2/guides/help_screen.dart';

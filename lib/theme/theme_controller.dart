@@ -8,7 +8,7 @@
 // "Ember on Char" from the login/signup screen onward. The choice is persisted
 // and editable later from onboarding and Profile; UI updates live on change.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

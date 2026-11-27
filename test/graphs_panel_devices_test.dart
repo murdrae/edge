@@ -2,10 +2,11 @@
 // Upstream's pop-in named the devices behind the touched day ("Band + Ring");
 // the replacement panel must keep that line, reserve its height on a
 // multi-device window, and never speak it twice.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/semantics.dart' show SemanticsNode;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/profile/devices.dart' show DeviceOption;
 import 'package:openstrap_edge/ui2/screens/screens.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -58,7 +59,7 @@ Future<void> _open(WidgetTester t, {required bool multi, int? gap}) async {
   addTearDown(t.view.reset);
   await t.pumpWidget(MaterialApp(
     locale: const Locale('en'),
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     theme: buildTheme(Brightness.light),
     home: Scaffold(body: MetricDetail('resting_hr', data: _data(multi: multi, gap: gap))),

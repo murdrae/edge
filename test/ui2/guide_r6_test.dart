@@ -1,5 +1,5 @@
 // Retained Round 6 path and multi-target behavior checks, now shared structurally.
-import 'dart:math' as math; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:math' as math; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/db.dart'; import 'package:openstrap_edge/ui2/activity/picker.dart' show ActivityPicker, ActivityRow;
 import 'package:openstrap_edge/ui2/activity/setup.dart' show ActivitySetup; import 'package:openstrap_edge/ui2/guides/guide.dart';
 import 'package:openstrap_edge/ui2/skeleton/unit_paint.dart';

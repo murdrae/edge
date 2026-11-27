@@ -16,6 +16,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # The Material and Cupertino libraries, unbundled from the SDK in Flutter
+  # 3.47 (package:flutter/material.dart and cupertino.dart are deprecated).
+  # They also own GlobalMaterialLocalizations / GlobalCupertinoLocalizations
+  # and the per-locale MaterialLocalizationXx classes now.
+  material_ui: ^1.11.1
+  cupertino_ui: ^1.1.7
   # Pinned to what flutter_localizations (this SDK) requires — see its own
   # pubspec.lock entry, don't drift it independently.
   intl: ^0.20.2
@@ -697,7 +703,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^6.0.0
   # DB part guards inspect declarations and SQL arguments through the Dart AST.
-  analyzer: ^10.0.1
+  analyzer: ^14.7.0
   test: ^1.25.8
   # no_runtime_font_fetch_test parses pubspec.yaml to assert every family the
   # type scale uses is bundled rather than fetched at runtime.

@@ -14,7 +14,7 @@
 // Water is NOT re-invented here: it is the existing `water_ml` journal field
 // (`lib/data/journal_fields.dart`), read and written through the repo.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 

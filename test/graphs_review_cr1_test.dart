@@ -7,12 +7,13 @@
 //   8  both sleep charts share one instant, not one fraction
 //   9  a night with no staging does not say "not measured"
 //  10  an empty series reads empty and does not throw
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/semantics.dart' show SemanticsNode;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/compute/vendor_sleep.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/state/clock_format.dart';
 import 'package:openstrap_edge/ui2/screens/screens.dart';
@@ -21,7 +22,7 @@ import 'package:openstrap_edge/ui2/ui2.dart';
 
 Widget _app(Widget home, {double scale = 1}) => MaterialApp(
       locale: const Locale('en'),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: buildTheme(Brightness.light),
       builder: (c, child) => MediaQuery(

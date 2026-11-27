@@ -1,7 +1,7 @@
 // The words the pairing screens print for registry and slot-comparison data,
 // in the user's language. Registry and compute code store l10n KEYS; this is
 // the one place a key becomes text (a generated class has no lookup by name).
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

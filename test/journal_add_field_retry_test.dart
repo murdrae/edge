@@ -3,7 +3,7 @@
 // without clearing the in-flight flag, so "check storage and retry" could not
 // be retried until the screen was rebuilt.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

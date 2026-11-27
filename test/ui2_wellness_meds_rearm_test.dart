@@ -3,7 +3,7 @@
 // repainted, and nothing re-armed — so a dose ticked at 07:56 still buzzed and
 // still said "A dose is due" at 08:00. A write on this tab has to re-arm.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

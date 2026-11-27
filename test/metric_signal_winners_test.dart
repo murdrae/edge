@@ -12,7 +12,7 @@
 // the user last customized ranking) must still be found, the same union
 // `_resolveOwnership` does in derivation_engine.dart.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';

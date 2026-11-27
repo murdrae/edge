@@ -3,7 +3,7 @@ import '../support/live_guide_focus.dart'; import 'dart:async';
 // the tap label gets a nudging hand; every marker keeps ONE side of its target; reduced motion makes all of it still.
 //
 // Spec: edge.research/guides/spec-r2-dim-and-card.md, section "Round 4". Real stage (test/support/live_guide_stage.dart), real scroll physics, real frame clock.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
 import 'package:openstrap_edge/ui2/grammar.dart' show Pressable, ScreenTitle, Surface;
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_markers.dart';

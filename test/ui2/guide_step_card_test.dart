@@ -1,5 +1,5 @@
 // GuideStepCard and placeGuideCard: the one card live guides show (spec "Live mode: the step card"). RED until the green phase implements lib/ui2/guides/guide_step_card.dart.
-import 'dart:ui' show Tristate; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:ui' show Tristate; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';
 import '../support/skeleton_fixture.dart'; import '../support/guide_text.dart'; final _l = lookupAppLocalizations(const Locale('en'));
 GuideFooter _missing() => GuideFooter( kind: GuideFooterKind.missingTarget, title: fnText((_) => "Don't see Open details?"),

@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/l10n/app_localizations_ru.dart';
 import 'package:openstrap_edge/l10n/presentation_text.dart';
 import 'package:openstrap_edge/l10n/decimal_text.dart';
@@ -306,7 +307,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         locale: const Locale('ru'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         theme: buildTheme(Brightness.light),
         builder: (context, child) => MediaQuery(
@@ -361,7 +362,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         locale: const Locale('ru'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         theme: buildTheme(Brightness.light),
         home: AppShell(

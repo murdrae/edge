@@ -5,7 +5,7 @@
 // failed read now ends in its own retryable card, and the same holds for the
 // day timeline.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

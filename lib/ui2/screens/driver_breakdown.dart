@@ -24,7 +24,7 @@
 // says them out loud. The arithmetic of a score, never an account of a person:
 // a driver is a term in a formula we control, and the footer says so.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../l10n/app_localizations.dart';

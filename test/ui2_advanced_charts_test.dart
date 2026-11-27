@@ -1,7 +1,7 @@
 // The research charts live behind one door from Health, and the zone, lap
 // and strain charts that stay in the main flow read without a key.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/activity/day_strain.dart';
 import 'package:openstrap_edge/ui2/activity/summary.dart';

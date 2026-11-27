@@ -4,7 +4,7 @@
 // `openstrap/activity` for exactly that case; the Dart side closes the pushed
 // screens and leaves the tab underneath alone, as an iOS cold start would.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

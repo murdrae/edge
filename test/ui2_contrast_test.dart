@@ -13,7 +13,7 @@
 // Modelled on test/zone_contrast_test.dart, which does the same job for the
 // live-session HR ramp.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/charts.dart';
 import 'package:openstrap_edge/ui2/theme.dart';

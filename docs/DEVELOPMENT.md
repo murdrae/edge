@@ -6,9 +6,11 @@ For which repo a change belongs in, and tests, see
 
 ## Build and run
 
-Needs Flutter **3.41.6** (the version CI builds with; newer 3.x releases aren't
-supported yet). The `protocol` and `analytics` packages are pulled from git, pinned
-to exact commits in `pubspec.yaml`, so `pub get` fetches them for you.
+Needs Flutter **3.50.1** (the version CI builds with). Material and Cupertino
+come from the `material_ui` / `cupertino_ui` packages, not the SDK's
+deprecated `package:flutter/material.dart` / `cupertino.dart`. The `protocol`
+and `analytics` packages are pulled from git, pinned to exact commits in
+`pubspec.yaml`, so `pub get` fetches them for you.
 
 ```bash
 git clone https://github.com/OpenStrap/edge.git

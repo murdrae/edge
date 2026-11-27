@@ -11,7 +11,7 @@ class _ExecuteCalls extends RecursiveAstVisitor<void> {
   @override
   void visitMethodInvocation(MethodInvocation node) {
     if (node.methodName.name == 'execute') {
-      arguments.add(node.argumentList.arguments.first);
+      arguments.add(node.argumentList.arguments.first.argumentExpression);
     }
     super.visitMethodInvocation(node);
   }

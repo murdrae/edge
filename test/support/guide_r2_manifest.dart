@@ -1,5 +1,5 @@
 // Independent r2 oracle: component ownership is derived from public widget types and actual control callbacks, never from skeletonPlan's section ids.
-import 'dart:convert'; import 'dart:io'; import 'dart:math' as math; import 'dart:ui' as ui; import 'package:flutter/material.dart';
+import 'dart:convert'; import 'dart:io'; import 'dart:math' as math; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart';

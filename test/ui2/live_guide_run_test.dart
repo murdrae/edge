@@ -4,8 +4,9 @@
 // The trees are the live stage's real pages (test/support/live_guide_stage.dart):
 // anchors are resolved by the production GuideTarget code against laid-out
 // widgets, never faked.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/guides/guide_run.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';
 import '../support/live_guide_stage.dart'; import '../support/guide_text.dart';
 final _en = lookupAppLocalizations(const Locale('en'));
@@ -44,7 +45,7 @@ void main() {
       // appears on the same page: the guide must be on step 2 then, never stuck
       // on step 1.
       final stage = await pumpLiveStage(t, insertOverlay: false); await t.pumpWidget(MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold( body: Column(children: [ SizedBox(key: stageHomeTitle, height: 20, width: 100, child: const Text('home anchor')),
             SizedBox(key: stageDetailsTitle, height: 20, width: 100, child: const Text('details anchor')), ]), ), )); await t.pump();
       expect(GuideRun.matchStep(stage.run.variant, _topPage(t), _en), 1); });

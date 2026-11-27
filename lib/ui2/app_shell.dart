@@ -11,7 +11,7 @@
 // a screen can do on its own. Anything that feels like another destination is
 // a section or a pushed screen inside the domain that owns it.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../l10n/app_localizations.dart';

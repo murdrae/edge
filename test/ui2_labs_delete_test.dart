@@ -17,7 +17,7 @@
 // which is the point: gone from the store AND gone from the screen, with no
 // tab switch in between.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';

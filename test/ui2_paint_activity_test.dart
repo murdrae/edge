@@ -4,7 +4,7 @@
 // is the one whose baseline is a place. Both had a way of drawing something
 // the run did not do.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/charts.dart';
 import 'package:openstrap_edge/ui2/paint_activity.dart';

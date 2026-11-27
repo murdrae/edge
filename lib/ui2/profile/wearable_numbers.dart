@@ -11,7 +11,7 @@
 // slot of ours ([kDeviceValueSlot]) and are drawn only in [WearableDayView]'s
 // own-scores section, which is that device's page.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart'

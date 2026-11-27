@@ -1,7 +1,7 @@
 // #625: the switch on Detected activities. Off by default; turning it on
 // stores when it was turned on, turning it off clears that.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/ui2/screens/detected_activities.dart';

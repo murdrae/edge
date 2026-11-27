@@ -1,3 +1,11 @@
 arb-dir: lib/l10n
 template-arb-file: app_en.arb
 output-localization-file: app_localizations.dart
+# Flutter's gen-l10n template (3.50) still fills the generated
+# `AppLocalizations.localizationsDelegates` with flutter_localizations'
+# deprecated Global{Material,Cupertino}Localizations and has no option to
+# target material_ui / cupertino_ui. The app never uses that list (see
+# lib/l10n/delegates.dart), so the deprecation is silenced in the generated
+# files only; hand-written code stays fully checked. Drop this once gen-l10n
+# emits the material_ui / cupertino_ui delegates.
+header: "// ignore_for_file: deprecated_member_use"

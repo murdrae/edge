@@ -8,7 +8,7 @@
 // 1 -> 3). Cross-cutting claims: skeletonizes the REAL screen, the real target tap advances the run, wrong navigation shows the off-path card, Exit leaves
 // the app where the user is.
 import '../support/live_guide_focus.dart';
-import '../support/guide_r7_scenes.dart'; import 'package:flutter/material.dart'; import 'package:openstrap_edge/sync/paired_device.dart';
+import '../support/guide_r7_scenes.dart'; import 'package:material_ui/material_ui.dart'; import 'package:openstrap_edge/sync/paired_device.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/app.dart' show AppMainShell; import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/state/prefs.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';

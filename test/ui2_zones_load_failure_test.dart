@@ -7,7 +7,7 @@
 // A failed read now ends in its own retryable card, the same one Sleep, the
 // day timeline, Wellness and Naps use.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/state/app_state.dart';

@@ -9,7 +9,7 @@
 // the nearest ColoredBox/DecoratedBox colour at or below the keyed element
 // (0x00000000 when none). focusable/focused come from the Focus in the
 // subtree. Times are explicit ms offsets: the probe never reads a clock.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'layout_shift/layout_shift.dart';

@@ -2,7 +2,7 @@
 // Review captures of the real Profile and Activity bottom; not golden baselines.
 import 'dart:io';
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/profile/profile.dart';

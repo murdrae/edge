@@ -27,7 +27,7 @@ import 'dart:convert' show jsonDecode;
 import 'dart:isolate' show Isolate;
 import 'dart:math' show sqrt;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' as ana;
 

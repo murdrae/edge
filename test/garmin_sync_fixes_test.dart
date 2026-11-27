@@ -8,7 +8,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ble/adapters/_registry.dart' show kGarminNotifyChar;
 import 'package:openstrap_edge/ble/adapters/adapter.dart' show BandEvent, ReplayBandLink, SampleBatch;
@@ -21,6 +21,7 @@ import 'package:openstrap_edge/compute/profile.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/profile/wearable_numbers.dart';
 import 'package:openstrap_edge/ui2/screens/day_timeline.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -389,7 +390,7 @@ void main() {
           windowJson: '{}');
       await t.pumpWidget(MaterialApp(
         theme: buildTheme(Brightness.light),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: const WearableDayScreen(deviceId: id, adapterId: 'garmin'),
       ));

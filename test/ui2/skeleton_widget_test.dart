@@ -5,7 +5,7 @@
 // Pixel checks compare the SAME pixels with the overlay at progress 0 and 1, so
 // no skeleton colour is hard-coded (that is a design token, not a claim).
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/skeleton/skeleton.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 import '../support/skeleton_fixture.dart'; import '../support/guide_text.dart';
@@ -124,7 +124,7 @@ void main() { group('SkeletonBar / SkeletonBlock', () { testWidgets('take exactl
   });
   group('live plan: targets, not snapshots (item 3)', () { Widget scrolling(ScrollController c, {int cards = 6}) => skHost(Scaffold(
           body: Align( alignment: Alignment.topLeft, child: SizedBox( width: 300, height: 300, child: Skeletonize( key: _sk,
-                keep: [_target], child: ListView( controller: c, cacheExtent: 2000, padding: EdgeInsets.zero, children: [
+                keep: [_target], child: ListView( controller: c, scrollCacheExtent: const ScrollCacheExtent.pixels(2000), padding: EdgeInsets.zero, children: [
                     for (var i = 0; i < cards; i++) Surface( key: ValueKey('card$i'), child: i == 3
                             ? GestureDetector(key: _tapT, onTap: () {}, child: const Text('target', style: _ahem))
                             : Text('card $i', style: _ahem), ), const SizedBox(height: 900), ], ), ), ), ), ));

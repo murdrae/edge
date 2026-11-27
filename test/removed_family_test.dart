@@ -3,7 +3,7 @@
 // unsupported, no sync, no timeline candidate, and still forgettable
 // (forget is pinned in hrs_link_test.dart).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_edge/ble/adapters/_registry.dart';

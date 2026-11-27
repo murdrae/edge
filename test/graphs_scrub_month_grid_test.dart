@@ -6,7 +6,7 @@
 // day's side. The panel reads "Above usual / Normal for you / Below usual"
 // for the selected day, a dash for a day with no value, and a row that is not
 // shaded (too little history) has neither a strip to scrub nor a panel.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/metric_detail.dart' show specOf;
 import 'package:openstrap_edge/ui2/screens/month_grid.dart';

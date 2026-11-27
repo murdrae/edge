@@ -1,5 +1,5 @@
 // Round 7 fix 1: one check per blocking review finding (r7-review-opus.md F1..F6).
-import 'dart:async'; import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:async'; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/activity/picker.dart' show ActivityPicker, ActivityRow;
 import 'package:openstrap_edge/ui2/guides/guide_content.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_hand.dart';

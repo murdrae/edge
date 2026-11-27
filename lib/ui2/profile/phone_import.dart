@@ -29,7 +29,7 @@
 // app's own baseline key is fed from rmssd; mixing them is how a new user gets
 // a confidently wrong first month, which is worse than the blank it replaces.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' as ana;
 

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
@@ -12,6 +12,7 @@ import 'package:openstrap_edge/coach/coach_config.dart';
 import 'package:openstrap_edge/coach/coach_engine.dart';
 import 'package:openstrap_edge/data/models.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/l10n/display_text.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/state/app_state.dart';
@@ -32,7 +33,7 @@ import 'package:openstrap_edge/ui2/ui2.dart';
 Widget page(Widget child, {String locale = 'ru', double scale = 1}) =>
     MaterialApp(
       locale: Locale(locale),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: buildTheme(Brightness.light),
       builder: (c, child) => MediaQuery(

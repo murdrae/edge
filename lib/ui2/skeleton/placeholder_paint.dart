@@ -1,6 +1,6 @@
 // Replaces content at paint time. Decorations keep their own paint; there is
 // no erase/fill over the card, so gradients, images and icon controls survive.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 
 import '../guides/guide_accordion.dart';

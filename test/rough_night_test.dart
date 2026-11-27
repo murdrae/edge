@@ -7,7 +7,7 @@
 // change that makes this file's first test fail has loosened a gate that exists
 // to stop the app guessing at somebody's night.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/screens/rough_night.dart';

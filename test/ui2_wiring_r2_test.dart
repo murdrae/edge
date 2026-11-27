@@ -13,7 +13,7 @@
 //  · "days with a derived record in the last month" counted every derived day
 //    since install, so anyone past their first month read "30 of 30".
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' as ana;

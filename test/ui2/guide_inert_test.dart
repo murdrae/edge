@@ -1,7 +1,7 @@
 // WHY: installing the engine must preserve pixels, semantics and real taps until
 // a guide is started. These are the shared hooks every existing screen uses.
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart';

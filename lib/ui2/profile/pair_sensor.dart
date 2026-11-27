@@ -48,7 +48,7 @@ import '../../l10n/display_text.dart';
 
 import 'dart:async' show unawaited;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart' show PlatformException;
 import 'package:flutter_blue_plus/flutter_blue_plus.dart' show BluetoothDevice;
 import 'package:lucide_icons_flutter/lucide_icons.dart';

@@ -4,7 +4,7 @@
 // into; the device page fades the column it is not in. One widget, one file,
 // so the comparison style can be swapped without touching a screen. The facts
 // come from `slotComparisonFor`; this only draws.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/slot_comparison.dart';

@@ -5,7 +5,7 @@
 // tap target that opens Investigate. The fork made this chart scroll-first
 // scrubbable (87f9654f). The chart must read a night under the finger without
 // the card navigating, and the page must still scroll from the chart.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/screens.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';

@@ -2,13 +2,14 @@
 // without a label a screen reader announced it as a bare "button". Its
 // primary "Add to journal" button was a raw English literal, so it stayed
 // English under a translated chat.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:openstrap_edge/coach/coach_config.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/app_state.dart';
 import 'package:openstrap_edge/ui2/screens/journal_compose.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -28,7 +29,7 @@ Future<void> _openSheet(WidgetTester t, Locale locale) async {
   await t.pumpWidget(MaterialApp(
     theme: buildTheme(Brightness.light),
     locale: locale,
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     home: MultiProvider(
       providers: [

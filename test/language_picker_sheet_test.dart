@@ -1,12 +1,13 @@
 // The language picker used to overflow its bottom sheet (capped at 9/16 of the
 // screen) once the list grew past what fits. It must lay out without an
 // overflow on a short screen, and every language must stay reachable.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/locale_controller.dart';
 import 'package:openstrap_edge/ui2/profile/profile.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
@@ -24,7 +25,7 @@ void main() {
       value: ctrl,
       child: MaterialApp(
         theme: buildTheme(Brightness.dark),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: const ProfileHomeView(stats: ProfileStats(name: 'Sahil')),
       ),

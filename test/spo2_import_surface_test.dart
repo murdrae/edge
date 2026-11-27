@@ -1,6 +1,6 @@
 // Imported WHOOP blood oxygen: the importer writes the `spo2` series with
 // WHOOP provenance, and the metric screen loads and charts it.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/compute/substrate.dart' show localDateLabel;
 import 'package:openstrap_edge/data/db.dart';

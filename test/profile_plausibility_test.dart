@@ -5,7 +5,7 @@
 // -1185 bpm, so every zone of every day was banded off it. An imperial height
 // typed as feet.inches ("5.10") saved as 13 cm.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/compute/hr_max.dart';
 import 'package:openstrap_edge/compute/profile.dart';

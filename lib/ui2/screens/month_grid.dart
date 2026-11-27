@@ -23,7 +23,7 @@ import '../../l10n/display_text.dart';
 // days", which cannot reset to zero and does not pay more for consecutive days
 // than for scattered ones.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../data/day_label.dart' show calendarDaysBetween;
 import '../../data/local_repository.dart';

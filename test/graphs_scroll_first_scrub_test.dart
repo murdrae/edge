@@ -16,7 +16,7 @@
 // Two production charts are driven (metric detail trend, sleep hypnogram) plus
 // the bare Scrubber in a ListView for the slop law.
 import 'package:flutter/gestures.dart' show DeviceGestureSettings;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/screens.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';

@@ -2,7 +2,7 @@
 // zone-alert buzz, double-tap, step calibration) would open screens that can
 // only say "the band is not connected". With a band they show as before.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/profile/settings.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';

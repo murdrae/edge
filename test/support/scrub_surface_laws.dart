@@ -14,10 +14,11 @@
 //
 // FIXTURES are dated backwards from the wall clock in LOCAL calendar days
 // (never a fixed date, never UTC), so they hold in any host timezone.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/semantics.dart' show SemanticsNode;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/state/clock_format.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 
@@ -29,7 +30,7 @@ String plainOf(Text x) => x.data ?? x.textSpan?.toPlainText() ?? '';
 
 Widget scaledApp(double scale, Widget home) => MaterialApp(
       locale: const Locale('en'),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: buildTheme(Brightness.light),
       builder: (c, child) => MediaQuery(

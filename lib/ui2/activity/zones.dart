@@ -23,7 +23,7 @@ import '../../l10n/display_text.dart';
 // arithmetic working exactly as intended and it will be reported as a bug, so
 // the copy names it before the user does.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 

@@ -3,12 +3,13 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/coach/coach_config.dart';
 import 'package:openstrap_edge/coach/coach_engine.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/state/clock_format.dart' show formatClockOf;
 import 'package:openstrap_edge/ui2/screens/screens.dart';
@@ -111,7 +112,7 @@ void main() {
     Future<void> pumpDetail(WidgetTester t, ReadinessData d) =>
         t.pumpWidget(MaterialApp(
           theme: buildTheme(Brightness.light),
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: ReadinessDetail(data: d),
         ));

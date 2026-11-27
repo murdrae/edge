@@ -3,14 +3,15 @@
 // engine (RenderParagraph line boxes, RenderBox transforms), never from the
 // code under test.
 import 'dart:convert' show jsonDecode; import 'dart:io'; import 'dart:isolate'; import 'dart:typed_data';
-import 'package:flutter/material.dart'; import 'package:flutter/services.dart' show FontLoader; import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/services.dart' show FontLoader; import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 /// A MaterialApp with the app's localization delegates, one locale, and ui2's
 /// theme, so P.of(context) and AppLocalizations.of(context) both work.
 Widget skHost( Widget home, { Locale locale = const Locale('en'), Brightness brightness = Brightness.light, }) => MaterialApp(
       debugShowCheckedModeBanner: false, theme: buildTheme(brightness), locale: locale,
-      localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, home: home, );
+      localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales, home: home, );
 /// A tall 1:1 surface so lazily built lists build everything.
 void skTallView(WidgetTester t, {double w = 800, double h = 3000}) { t.view.physicalSize = Size(w, h); t.view.devicePixelRatio = 1;
   addTearDown(t.view.reset); }

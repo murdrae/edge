@@ -1,6 +1,6 @@
 // M6 -- LiveHrCard's device pill (spec-m6.md §11.5, §13.2 test 14).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:openstrap_edge/data/models.dart';

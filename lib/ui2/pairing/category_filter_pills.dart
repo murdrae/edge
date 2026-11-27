@@ -1,7 +1,7 @@
 // filter pills over a device list ("All · WHOOP · Rings · Watches ·
 // Straps"). One widget, one file, so the list grouping can be swapped for
 // another style (accordions, plain headers) without touching a screen.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../ble/adapters/_registry.dart';
 import '../ui2.dart';

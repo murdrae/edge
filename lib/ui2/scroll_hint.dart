@@ -28,7 +28,7 @@
 // the 40 pt tail, both nearly nothing to bite on. Fade alone was measured on
 // that config and rejected there; the chevron is what carries it.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import 'theme.dart';

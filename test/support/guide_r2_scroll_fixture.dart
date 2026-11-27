@@ -1,6 +1,7 @@
 // A non-lazy page keeps target geometry measurable when a user's drag hides it. This fixture supplies widgets and a real ScrollController, never guide policy.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 import 'package:openstrap_edge/ui2/guides/guide_run.dart'; import 'package:openstrap_edge/ui2/guides/guide_routes.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart';
@@ -10,7 +11,7 @@ const r2ScrollLookalike = ValueKey('r2-scroll-lookalike'); const r2ScrollTarget 
   final routes = GuideRouteObserver(); final dim = GuideDimController(); late GuideRun run; OverlayEntry? entry; int lookalikeTaps = 0;
   Future<void> pump(WidgetTester t) async { t.view.physicalSize = const Size(390, 780); t.view.devicePixelRatio = 1; addTearDown(t.view.reset);
     await t.pumpWidget(GuideDimScope(controller: dim, child: MaterialApp(scrollBehavior: const GuideScrollBehavior(), navigatorKey: navKey, navigatorObservers: [routes],
-      theme: buildTheme(Brightness.light), locale: const Locale('en'), localizationsDelegates: AppLocalizations.localizationsDelegates,
+      theme: buildTheme(Brightness.light), locale: const Locale('en'), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(body: ListView(controller: controller, children: [Column(key: const ValueKey('r2-scroll-column'), children: [
         for (var i = 0; i < 6; i++) SizedBox(height: 100, child: Surface(child: Text('Earlier information $i'))),
