@@ -241,7 +241,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           # Bump deliberately, not by drift.
-          flutter-version: '3.41.6'
+          flutter-version: '3.50.1'
 
       - name: Test APK verification rules
         run: python3 -m unittest discover -s .github/scripts -p 'test_verify_apk.py'
@@ -403,7 +403,7 @@ jobs:
           # signing team despite --no-codesign). This version is verified
           # against the current codebase (376 tests + a local release build
           # of both platforms). Bump deliberately, not by drift.
-          flutter-version: '3.41.6'
+          flutter-version: '3.50.1'
 
       - name: Write .env
         run: |

@@ -6,7 +6,7 @@ For which repo a change belongs in, and tests, see
 
 ## Build and run
 
-Needs Flutter **3.41.6** (the version CI builds with; newer 3.x releases aren't
+Needs Flutter **3.50.1** (the version CI builds with; newer 3.x releases aren't
 supported yet). The `protocol` and `analytics` packages are pulled from git, pinned
 to exact commits in `pubspec.yaml`, so `pub get` fetches them for you.
 
