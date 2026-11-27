@@ -3,7 +3,7 @@
 // field to correct it left no way to type the separator, so 73.4 went in as
 // 734 or 73. Age stays a whole number.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/onboarding/profile_setup.dart';
 import 'package:openstrap_edge/ui2/profile/settings.dart';

@@ -15,7 +15,7 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -26,6 +26,7 @@ import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/data/local_repository_impl.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/metric.dart';
 import 'package:openstrap_edge/models/payloads.dart' show todayHeadlineOf;
 import 'package:openstrap_edge/ui2/screens/screens.dart';
@@ -114,7 +115,7 @@ Future<void> _pump(WidgetTester t, HomeData d) async {
   addTearDown(t.view.reset);
   await t.pumpWidget(MaterialApp(
     theme: buildTheme(Brightness.light),
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     home: MediaQuery(
       data: const MediaQueryData(size: Size(390, 800)),

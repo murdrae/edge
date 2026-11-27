@@ -4,7 +4,7 @@
 // energy, strain and wear come from the day. Those now say "Wear the band
 // through the day" (the strain screen's existing, translated hint).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/screens.dart';
 import 'package:openstrap_edge/state/app_state.dart';

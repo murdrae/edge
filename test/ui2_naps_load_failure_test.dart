@@ -3,7 +3,7 @@
 // threw — a busy or locked database is enough — left it on its spinner for
 // good, with no message and no way to retry. It now ends in a retryable card.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

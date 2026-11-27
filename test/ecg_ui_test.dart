@@ -6,7 +6,7 @@
 import 'dart:typed_data';
 import 'dart:ui' show PictureRecorder;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/coach/coach_config.dart';
 import 'package:openstrap_edge/ecg/ecg_controller.dart';
@@ -15,6 +15,7 @@ import 'package:openstrap_edge/ecg/ecg_models.dart';
 import 'package:openstrap_edge/ecg/ecg_transport.dart';
 import 'package:openstrap_edge/ecg/ecg_waveform_buffer.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/screens/ecg.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +34,7 @@ Future<void> _pump(
       data: MediaQueryData(disableAnimations: reducedMotion),
       child: MaterialApp(
         theme: buildTheme(Brightness.light),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: home,
       ),
@@ -523,7 +524,7 @@ void main() {
             value: cfg,
             child: MaterialApp(
               theme: buildTheme(Brightness.light),
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              localizationsDelegates: appLocalizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
               navigatorObservers: [_RouteLog(pushed)],
               home: EcgDetailScreen(

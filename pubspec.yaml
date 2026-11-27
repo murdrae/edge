@@ -16,6 +16,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # The Material and Cupertino libraries, unbundled from the SDK in Flutter
+  # 3.47 (package:flutter/material.dart and cupertino.dart are deprecated).
+  # They also own GlobalMaterialLocalizations / GlobalCupertinoLocalizations
+  # and the per-locale MaterialLocalizationXx classes now.
+  material_ui: ^1.11.1
+  cupertino_ui: ^1.1.7
   # Pinned to what flutter_localizations (this SDK) requires — see its own
   # pubspec.lock entry, don't drift it independently.
   intl: ^0.20.2

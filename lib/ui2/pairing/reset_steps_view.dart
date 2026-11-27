@@ -4,7 +4,7 @@
 //  - unverified: general steps, an orange "we haven't checked" note and a row
 //    that opens the maker's own help page;
 //  - noOfficialSite: general steps and no link (the maker has no site).
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

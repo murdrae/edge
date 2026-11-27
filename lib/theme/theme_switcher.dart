@@ -12,7 +12,7 @@
 //     re-coloured tree underneath — a clean dissolve, with the nav stack intact.
 
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 

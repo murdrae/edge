@@ -10,7 +10,7 @@
 // history there is no range, nothing is shaded and the verdict is not drawn;
 // the caller says so in one short line ([usualNeedsDaysText]).
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../compute/findings.dart' show kReadinessEasyBelow, kReadinessGoodFrom;

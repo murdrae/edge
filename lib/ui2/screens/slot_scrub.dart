@@ -6,7 +6,7 @@
 // day, the last slot is the caller's anchor day, a null slot is a day with nothing recorded. The
 // panel reads LATEST on the newest recorded day and SELECTED on the touched
 // one; a null day reads a dash, never a neighbour.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../data/day_label.dart';
 import '../../l10n/app_localizations.dart';

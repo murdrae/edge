@@ -3,7 +3,7 @@
 // pill is told apart only by fill and font weight, so a screen reader has to
 // be given the selected state explicitly or it reads every pill the same.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 

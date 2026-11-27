@@ -37,7 +37,7 @@
 // (ASSUMPTIONS R6).
 
 import '../../l10n/display_text.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart'
     show BluetoothDevice;
 import 'package:lucide_icons_flutter/lucide_icons.dart';
@@ -378,11 +378,12 @@ class _SignalPriorityScreenState extends State<SignalPriorityScreen> {
                         ReorderableListView(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          onReorder: (from, to) async {
+                          onReorderItem: (from, to) async {
                             final ids = [...?_order[sig]];
-                            // ReorderableListView's `to` is the index BEFORE removal.
-                            ids.insert(
-                                to > from ? to - 1 : to, ids.removeAt(from));
+                            // onReorderItem's `to` is already the index AFTER
+                            // removing `from` (the deprecated onReorder's was
+                            // the index before removal and needed `to - 1`).
+                            ids.insert(to, ids.removeAt(from));
                             try {
                               await LocalDb.setSignalPriority(sig, ids);
                             } catch (_) {

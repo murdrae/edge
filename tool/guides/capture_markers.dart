@@ -7,7 +7,7 @@
 //                     then the settled step   log-past-workout  step 1 (History sub-tab): a moving-hand frame
 //   log-past-workout  step 2 (History, scroll step): settled; and on a short phone (412x560),
 //                     where the target starts below the fold: mid-auto-scroll with the indicator, then settled
-import 'dart:io'; import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:io'; import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_catalogue.dart';
 import 'package:openstrap_edge/ui2/guides/guide_runner.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import 'package:path/path.dart' as p;
 import '../../test/support/bundled_fonts.dart'; import '../../test/support/guide_r2_scenes.dart' show r2OpenDb;

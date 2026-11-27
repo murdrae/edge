@@ -22,7 +22,7 @@ import 'coach_text.dart';
 import '../../data/db.dart';
 import '../../l10n/display_text.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import '../../coach/coach_apple.dart';
 import 'package:gpt_markdown/gpt_markdown.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';

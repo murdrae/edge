@@ -2,7 +2,7 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 // Opt-in review artifacts, not pixel goldens. Run on Boat with GUIDE_SHOTS_DIR set to an output directory. No app code or stored wearer data is changed.
 import 'dart:convert'; import 'dart:io'; import 'dart:ui' as ui;
-import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/compute/derivation_engine.dart';
 import 'package:openstrap_edge/compute/manual_session.dart'; import 'package:openstrap_edge/ble/ble_engine.dart';
 import 'package:openstrap_edge/data/day_label.dart'; import 'package:openstrap_edge/data/db.dart';

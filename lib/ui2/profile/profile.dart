@@ -9,7 +9,7 @@
 // tier would have to be sold. What replaces them is what this app actually
 // knows — how much it has measured, and from what.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 

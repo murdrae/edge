@@ -1,7 +1,7 @@
 // "It got it wrong" corrections are stored as user overrides and must outlive
 // a full re-analysis: the force pass re-runs detection and replays it through
 // the same reconcile / nap-edit / sleep-override seams these tests drive.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -11,6 +11,7 @@ import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/data/local_repository_impl.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/models/activity_suggestion.dart';
 import 'package:openstrap_edge/ui2/screens/detected_activities.dart';
 import 'package:openstrap_edge/ui2/theme.dart';
@@ -122,7 +123,7 @@ void main() {
         t.pumpWidget(MaterialApp(
           theme: buildTheme(Brightness.light),
           locale: locale,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: Scaffold(
             body: ActivityProposalCard(

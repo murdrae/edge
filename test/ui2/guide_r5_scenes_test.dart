@@ -5,7 +5,7 @@
 //      chrome is never dimmed on a step (P4: the owner's shot 1 shows a dim title and arrow);
 //   7. on a step, the previous and the next step's targets are never placeholders: they stay      real controls (dim at most) and take taps.
 //   3. off path with a chrome route back (a tab), every content unit dims, the route's      neighbouring card too.
-import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/data/db.dart'; import 'package:openstrap_edge/ui2/app_shell.dart' show ShellDomain;
 import 'package:openstrap_edge/ui2/grammar.dart' show NavBar, Pressable;
 import 'package:openstrap_edge/ui2/screens/detected_activities.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';

@@ -10,7 +10,7 @@
 //
 // Mating parts: `Skeletonize` (../skeleton/skeleton.dart) covers the frame; [revealTarget] (guide_target.dart) scrolls it to the target and reports the
 // rect the markers are placed from. Both read the screen at the same root.
-import 'package:flutter/material.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_markers.dart';
 import 'package:openstrap_edge/ui2/guides/guide_target.dart'; import 'package:openstrap_edge/ui2/skeleton/skeleton.dart'; import 'package:openstrap_edge/ui2/theme.dart';
 import 'guide_demo_screens.dart';

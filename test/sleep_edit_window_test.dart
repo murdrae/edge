@@ -2,7 +2,7 @@
 // lands on whichever side of midnight is next to the measured onset; pinning
 // it to the onset's own date moved the correction a whole night.
 
-import 'package:flutter/material.dart' show TimeOfDay;
+import 'package:material_ui/material_ui.dart' show TimeOfDay;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/sleep_detail.dart'
     show correctedSleepWindow;

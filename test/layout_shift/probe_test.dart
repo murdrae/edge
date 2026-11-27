@@ -1,6 +1,6 @@
 // The probe must see a real widget tree the way the scorer expects.
 // Test surface: 800 x 600 logical. Times are explicit pump durations.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../support/layout_shift/layout_shift.dart';
 

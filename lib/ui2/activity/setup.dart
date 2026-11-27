@@ -14,7 +14,7 @@
 // not a simpler control, it is a promise. The estimate is a RATE now, on the
 // same thirty-minute basis the picker's rows use, so the two screens compare.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../l10n/app_localizations.dart';

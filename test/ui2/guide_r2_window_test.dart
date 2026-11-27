@@ -9,7 +9,7 @@
 // (guide_r2_interaction_test).
 //
 // Every test states WHY and what it CATCHES.
-import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
+import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import 'package:openstrap_edge/ui2/skeleton/skeleton.dart'; import 'package:openstrap_edge/ui2/theme.dart';
 import '../support/guide_r2_fixture.dart'; import '../support/guide_r2_pixels.dart'; const _cards = ['A', 'B', 'C', 'D', 'E']; const _red = Color(0xFFFF0000);

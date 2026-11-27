@@ -6,7 +6,7 @@ import '../../l10n/display_text.dart';
 // today (search, then eight collapsed groups). Both land on the same setup
 // screen, so there is one path to a live session, not two.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../l10n/app_localizations.dart';

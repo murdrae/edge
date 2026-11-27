@@ -6,7 +6,7 @@
 // get right, and they are the only reason WH-02, WH-03 and WH-08 can talk
 // about "the same day of a different cycle" at all.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/cycle_screen.dart';
 

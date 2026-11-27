@@ -9,7 +9,7 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ble/adapters/miband234.dart';
 import 'package:openstrap_edge/ble/hrs_link.dart';
@@ -21,6 +21,7 @@ import 'package:openstrap_edge/compute/profile.dart';
 import 'package:openstrap_edge/compute/vendor_sleep.dart' show VendorEpoch;
 import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/profile/wearable_numbers.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -50,7 +51,7 @@ const Profile _profile =
 Future<void> _pumpHomeCard(WidgetTester t) async {
   await t.runAsync(() async {
     await t.pumpWidget(MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
           body: ListView(children: const [

@@ -2,7 +2,7 @@
 // front of the localized lower/higher phrase, so a German reader saw
 // "12 points niedriger als üblich". The unit now comes from the locale.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:openstrap_edge/l10n/app_localizations.dart';

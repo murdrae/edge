@@ -2,7 +2,7 @@
 // opened nor deleted: the running send writes into the open chat, and either
 // would put its reply in the wrong chat or save a deleted one back.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/coach/coach_engine.dart';
 import 'package:openstrap_edge/ui2/screens/coach.dart';

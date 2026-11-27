@@ -1,6 +1,6 @@
 // The start card inside a scrolling page: its Spacer needs a bounded height,
 // which a ListView does not give. It asserted in debug and had no size.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/start_card.dart';
 import 'package:openstrap_edge/ui2/theme.dart';

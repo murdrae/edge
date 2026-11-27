@@ -32,7 +32,7 @@
 // rate ran high" card in `sleep_detail._unusual` rather than stacking on it.
 // Two cards about one night are two observations as far as the reader can tell.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' as ana;
 import 'package:provider/provider.dart';

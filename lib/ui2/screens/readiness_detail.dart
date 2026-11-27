@@ -6,7 +6,7 @@ import '../../l10n/presentation_text.dart';
 // parallel percentile view of the same four inputs. Presenting the second as
 // if it decomposed the first would be a small lie that is very hard to catch.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_analytics/onehz.dart' show readinessCompositeMinBaseline;
 

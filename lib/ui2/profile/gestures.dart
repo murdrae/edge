@@ -14,7 +14,7 @@
 // the list. When native answers with nothing at all, the phone actions are
 // absent AND SAY SO, rather than leaving a gap to guess at.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 // WHY: an overlay rectangle can agree at rest and drift during stretch/scroll. Move the target's ancestor without replanning, then inspect actual pixels.
 // CLAIM(hover-in-target-tree).
-import 'dart:ui' as ui; import 'package:flutter/material.dart'; import 'package:flutter/rendering.dart';
+import 'dart:ui' as ui; import 'package:material_ui/material_ui.dart'; import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 import 'package:openstrap_edge/ui2/skeleton/unit_paint.dart'; import 'package:openstrap_edge/ui2/theme.dart';
 void main() { testWidgets('R7 hover follows the target through translation and stretch, leaving no paint behind', (t) async {

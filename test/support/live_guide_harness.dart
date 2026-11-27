@@ -6,11 +6,12 @@
 //
 // Not a test file (no _test suffix).
 import 'package:openstrap_edge/coach/coach_config.dart';
-import 'dart:convert'; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'dart:convert'; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/app.dart' show AppMainShell; import 'package:openstrap_edge/data/day_label.dart';
 import 'package:openstrap_edge/state/locale_controller.dart'; import 'package:openstrap_edge/ble/ble_engine.dart';
 import 'package:openstrap_edge/data/db.dart'; import 'package:openstrap_edge/data/local_repository.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/models/activity_suggestion.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/sync/paired_device.dart'; import 'package:openstrap_edge/state/app_state.dart'; import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/state/units_controller.dart'; import 'package:openstrap_edge/theme/theme_controller.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_runner.dart';
@@ -99,7 +100,7 @@ Future<LiveGuideApp> pumpLiveGuideApp( WidgetTester t, { Widget? home, Locale lo
     child: GuideDimScope(controller: guideRunner.dim, child: RepaintBoundary( key: captureKey,
       child: MaterialApp(scrollBehavior: const GuideScrollBehavior(), navigatorKey: app.navigatorKey,
         navigatorObservers: [guideRunner.routes], debugShowCheckedModeBanner: false, theme: buildTheme(brightness), locale: locale,
-        localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, child) => MediaQuery( data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(textScale)),
           child: child!, ), home: home ?? const AppMainShell(), ), )), )); await settleLiveGuide(t); return app; }
 /// Several frames and real-zone time for the repository reads to land. Not

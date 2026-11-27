@@ -1,7 +1,7 @@
 // The cycle prediction lead clause is shown for "one day away" and "one day
 // overdue" at every cycle boundary, so a plain "{days} days" placeholder read
 // "in 1 days" / "1 days late" in most locales.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
 

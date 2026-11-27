@@ -27,7 +27,7 @@ import '../../l10n/display_text.dart';
 // entries carry the same "this is a screen, see a clinician" wording they
 // carry in the notification.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../compute/findings.dart';

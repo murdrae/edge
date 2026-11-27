@@ -1,6 +1,7 @@
-import 'package:flutter_test/flutter_test.dart'; import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart'; import 'package:material_ui/material_ui.dart';
 import 'package:openstrap_edge/ui2/grammar.dart' show Surface; import 'package:openstrap_edge/ui2/guides/guide_step_card.dart';
 import 'package:openstrap_edge/ui2/theme.dart'; import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import '../support/guide_r2_scroll_fixture.dart'; import '../support/guide_r2_fixture.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/skeleton/unit_paint.dart';
 import 'package:openstrap_edge/ui2/guides/guide_motion.dart'; void main() {
@@ -43,7 +44,7 @@ import 'package:openstrap_edge/ui2/guides/guide_motion.dart'; void main() {
   // WHY: the instruction must stand out on the unchanged card surfaces below it.
   // # catches: a flat material or a thick/non-theme border.
   testWidgets('G: instruction has a one pixel theme outline and medium shadow', (t) async {
-    await t.pumpWidget(MaterialApp(theme: buildTheme(Brightness.dark), localizationsDelegates: AppLocalizations.localizationsDelegates,
+    await t.pumpWidget(MaterialApp(theme: buildTheme(Brightness.dark), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales, home: Scaffold(body: GuideStepCard(model: const GuideCardOffPath(), onExit: () {}))));
     final material = t.widget<Material>(find.byKey(GuideStepCard.cardKey)); expect(material.elevation, greaterThanOrEqualTo(4));
     final decoration = t.widget<DecoratedBox>(find.descendant( of: find.byKey(GuideStepCard.cardKey), matching: find.byType(DecoratedBox)).first).decoration as BoxDecoration;
@@ -52,7 +53,7 @@ import 'package:openstrap_edge/ui2/guides/guide_motion.dart'; void main() {
   // # catches: shadowColor taken from a light-theme token in the dark theme.
   testWidgets('G: the dark theme shadow is black, the light theme keeps its token', (t) async {
     for (final b in [Brightness.dark, Brightness.light]) { await t.pumpWidget(MaterialApp(theme: buildTheme(b),
-        localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(body: GuideStepCard(model: const GuideCardOffPath(), onExit: () {}))));
       await t.pumpAndSettle(); // the theme change animates
       final material = t.widget<Material>(find.byKey(GuideStepCard.cardKey)); final color = material.shadowColor!;

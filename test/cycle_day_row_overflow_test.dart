@@ -7,7 +7,7 @@
 // overflowed by 147 pt in the test font, and by less, but still, with larger
 // system text (iOS goes to 3.1x) or a longer language.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 

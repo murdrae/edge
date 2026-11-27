@@ -7,7 +7,7 @@
 // the device page's battery reads are best-effort), and a real sqflite open
 // under the widget test's fake clock leaves the close hanging in teardown.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

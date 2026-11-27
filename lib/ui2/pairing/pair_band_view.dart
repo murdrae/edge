@@ -1,7 +1,7 @@
 // First-run "Pair your band": the devices that can be the user's main band,
 // each marked "Every day", the always-open "Trouble connecting?" card, and
 // the ways out (a heart-rate strap only, skip).
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../ble/adapters/_registry.dart';

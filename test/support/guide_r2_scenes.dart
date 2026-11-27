@@ -1,6 +1,6 @@
 // Real shell + real page fixtures for the cross-cutting r2 guard. The scene table is independent of the guide definitions; coverage is checked exactly.
 import 'package:openstrap_edge/sync/paired_device.dart';
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/state/alarm_schedule.dart';
 import 'package:openstrap_edge/ui2/activity/catalogue.dart'; import 'package:openstrap_edge/ui2/activity/day_strain.dart';
 import 'package:openstrap_edge/ui2/activity/live.dart'; import 'package:openstrap_edge/ui2/activity/picker.dart';

@@ -1,9 +1,9 @@
 // Shared harness for the pairing screens' widget tests: real theme, real
 // localizations, a phone-sized view, no BLE.
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
 
 Future<void> pumpPair(
@@ -22,12 +22,7 @@ Future<void> pumpPair(
   final app = MaterialApp(
     debugShowCheckedModeBanner: false,
     locale: locale,
-    localizationsDelegates: const [
-      AppLocalizations.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate,
-    ],
+    localizationsDelegates: appLocalizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
     theme: buildTheme(brightness),
     builder: (c, child) => MediaQuery(

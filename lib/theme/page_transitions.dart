@@ -10,7 +10,7 @@
 // swipe-back on every pushed screen. This builder is therefore registered for
 // Android-likes ONLY; iOS/macOS keep CupertinoPageTransitionsBuilder.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Shared-axis fade-through: the incoming page fades in with a subtle rise
 /// while the outgoing one recedes — the app's warm, settled motion language.

@@ -9,7 +9,7 @@
 // is no `path_provider` plugin under a test binding, so this file exercises
 // the no-network, no-cache path for real rather than by mocking it.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/state/prefs.dart';
 import 'package:openstrap_edge/ui2/activity/catalogue.dart';

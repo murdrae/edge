@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/data/db.dart';
 import 'package:openstrap_edge/ui2/activity/picker.dart'; import 'package:openstrap_edge/ui2/activity/setup.dart';
 import 'package:openstrap_edge/ui2/guides/guide_step_card.dart'; import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart';
 import '../support/guide_r2_scenes.dart'; import '../support/live_guide_harness.dart'; void main() { setUpAll(() => r2OpenDb('guide_r2_workout.db')); tearDownAll(LocalDb.close);

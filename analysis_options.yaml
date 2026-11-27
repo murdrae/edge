@@ -10,15 +10,12 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-  errors:
-    # Flutter 3.47+ deprecates package:flutter/material.dart and cupertino.dart
-    # in favour of the material_ui / cupertino_ui packages (plus a few renamed
-    # APIs). Silenced for the 3.50.1 toolchain bump so `flutter analyze` (fatal
-    # infos) stays usable; remove once the imports are migrated.
-    deprecated_member_use: ignore
   exclude:
     # F-Droid stand-ins, compiled only by the F-Droid recipe.
     - docs/fdroid/**
+    - build/**
+    - android/**
+    - ios/**
 
 linter:
   # The lint rules applied to this project can be customized in the

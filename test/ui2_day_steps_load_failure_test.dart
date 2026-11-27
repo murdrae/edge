@@ -3,7 +3,7 @@
 // default as "No steps counted"; after a day change it left the previous
 // day's numbers under the new day's label. Both now end in a retryable card.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:provider/provider.dart';

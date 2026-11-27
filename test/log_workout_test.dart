@@ -11,7 +11,7 @@
 // null without one, which is exactly the golden case — a screen that cannot
 // reach the repository must still render its own absence rather than throw.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:openstrap_edge/compute/manual_session.dart';

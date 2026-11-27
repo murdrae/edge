@@ -1,6 +1,7 @@
 // Consolidated regressions; each group retains its own test lifecycle.
-import '../support/live_guide_focus.dart'; import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import '../support/live_guide_focus.dart'; import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/state/prefs.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/app_shell.dart'; import 'package:openstrap_edge/ui2/grammar.dart';
 import 'package:openstrap_edge/ui2/guides/guide.dart'; import 'package:openstrap_edge/ui2/guides/guide_dim.dart';
 import 'package:openstrap_edge/ui2/guides/guide_routes.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
@@ -20,7 +21,7 @@ class _M0Shell { final nav = GlobalKey<NavigatorState>(); final routes = GuideRo
     SharedPreferences.setMockInitialValues(const {}); await Prefs.ensureLoaded(); t.view.physicalSize = const Size(412, 915);
     t.view.devicePixelRatio = 1; addTearDown(t.view.reset); await t.pumpWidget(GuideDimScope(controller: dim, child: MaterialApp(
       navigatorKey: nav, navigatorObservers: [routes], scrollBehavior: const GuideScrollBehavior(),
-      theme: buildTheme(Brightness.light), localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
+      theme: buildTheme(Brightness.light), localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
       home: AppShell(initial: ShellDomain.activity, builder: (context, domain) => switch (domain) { ShellDomain.activity => Column(children: [
           const Padding(padding: EdgeInsets.all(16), child: Text('Shell anchor line', key: _m0Anchor)),
           Pressable(key: _m0Control, onTap: () => controlTaps++, child: const Surface(child: Text('A control'))), ]),
@@ -87,7 +88,7 @@ class _M1DragPage { final scroll = ScrollController(); final dim = GuideDimContr
   Future<void> pump(WidgetTester t) async { t.view.physicalSize = const Size(390, 780); t.view.devicePixelRatio = 1;
     addTearDown(t.view.reset); await t.pumpWidget(GuideDimScope(controller: dim, child: MaterialApp(
       navigatorKey: nav, navigatorObservers: [routes], scrollBehavior: const GuideScrollBehavior(),
-      theme: buildTheme(Brightness.light), localizationsDelegates: AppLocalizations.localizationsDelegates,
+      theme: buildTheme(Brightness.light), localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales, home: Scaffold(body: Stack(children: [
         // The topmost text line is live status (kept lit): a title keeps the "Nearby" card out of that.
         const Positioned(top: 16, left: 16, child: Text('Page title')), Positioned(top: 80, left: 16, right: 16, bottom: 0, child: SingleChildScrollView(controller: scroll,

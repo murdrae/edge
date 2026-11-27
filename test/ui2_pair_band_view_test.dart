@@ -1,6 +1,6 @@
 // First-run "Pair your band": the list, the filter pills, the strap-only
 // sheet, the always-open Trouble connecting card and the way out. Rendered with fakes.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:openstrap_edge/ble/adapters/_registry.dart';

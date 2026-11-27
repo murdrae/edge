@@ -11,7 +11,7 @@
 // video, which put an asset load and a codec on the critical path of the one
 // moment the app is already slowest.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../ui2.dart';

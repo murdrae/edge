@@ -12,8 +12,9 @@
 // real control" is observed, not assumed.
 //
 // Not a test file (no _test suffix).
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/l10n/app_localizations.dart'; import 'package:openstrap_edge/ui2/guides/guide.dart';
+import 'package:openstrap_edge/l10n/delegates.dart';
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/guide_routes.dart'; import 'package:openstrap_edge/ui2/guides/guide_target.dart';
 import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import 'package:openstrap_edge/ui2/ui2.dart';
@@ -71,7 +72,7 @@ Future<LiveStage> pumpLiveStage( WidgetTester t, { Guide? guide, double detailsG
   final stage = LiveStage(taps, key, GuideRun(guide: g, variant: variant)); addTearDown(stage.run.dispose); addTearDown(stage.dim.dispose);
   await t.pumpWidget(GuideDimScope(controller: stage.dim, child: MaterialApp(scrollBehavior: const GuideScrollBehavior(), navigatorKey: key,
     navigatorObservers: [stage.routes], debugShowCheckedModeBanner: false, theme: buildTheme(Brightness.light), locale: locale,
-    localizationsDelegates: AppLocalizations.localizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
+    localizationsDelegates: appLocalizationsDelegates, supportedLocales: AppLocalizations.supportedLocales,
     home: StagePages(taps, detailsGap: detailsGap).home(), ))); await t.pump(); if (insertOverlay) { stage.entry = OverlayEntry(
       builder: (_) => LiveGuideOverlay( run: stage.run, navigatorKey: key, routes: stage.routes, onExit: () => stage.exitCount++,
         onBackToGuide: () => stage.backToGuideCount++, ), ); key.currentState!.overlay!.insert(stage.entry!); addTearDown(() {

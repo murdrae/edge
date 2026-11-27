@@ -1,6 +1,6 @@
 // The placeholder pulse's cost contract (owner review R1, performance): it runs only while a placeholder is on screen, repaints only placeholders, never walks the page, and is not
 // a page animation that throttles the guide's own planning.
-import 'package:flutter/material.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart' show Pressable, ScreenTitle, Surface;
+import 'package:material_ui/material_ui.dart'; import 'package:flutter_test/flutter_test.dart'; import 'package:openstrap_edge/ui2/grammar.dart' show Pressable, ScreenTitle, Surface;
 import 'package:openstrap_edge/ui2/guides/guide_dim.dart'; import 'package:openstrap_edge/ui2/guides/guide_run.dart';
 import 'package:openstrap_edge/ui2/guides/live_guide_overlay.dart'; import 'package:openstrap_edge/ui2/skeleton/unit_paint.dart'; import '../support/live_guide_stage.dart';
 LiveGuideOverlayState _overlay(WidgetTester t) => t.state<LiveGuideOverlayState>(find.byType(LiveGuideOverlay));

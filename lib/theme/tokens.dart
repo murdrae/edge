@@ -11,7 +11,7 @@
 // controller swaps `active` (synchronously) the instant the mode changes, so the
 // 546 `AppColors.x` call sites keep working untouched and re-theme on rebuild.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Light-sleep stage colour — a soft light orange (warm, distinct from the
 /// coral REM/Deep tones; replaces the old cool-blue which clashed with the

@@ -1,7 +1,7 @@
 // SlotScrub dates its slots from the calendar day its caller built the series
 // for, not from the clock at each touch. A chart left open across midnight
 // must keep labelling its data with the days the data is from.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:openstrap_edge/ui2/screens/slot_scrub.dart';
 import 'package:openstrap_edge/ui2/ui2.dart';
